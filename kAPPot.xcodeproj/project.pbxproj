@@ -1,0 +1,591 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		434CD984225EC03A0098BC1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434CD983225EC03A0098BC1B /* AppDelegate.swift */; };
+		434CD986225EC03B0098BC1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434CD985225EC03B0098BC1B /* ViewController.swift */; };
+		434CD989225EC03B0098BC1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434CD987225EC03B0098BC1B /* Main.storyboard */; };
+		434CD98B225EC0890098BC1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 434CD98A225EC0890098BC1B /* Assets.xcassets */; };
+		434CD98E225EC0890098BC1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434CD98C225EC0890098BC1B /* LaunchScreen.storyboard */; };
+		434CD999225EC08A0098BC1B /* kAPPotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434CD998225EC08A0098BC1B /* kAPPotTests.swift */; };
+		434CD9A4225EC08B0098BC1B /* kAPPotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434CD9A3225EC08B0098BC1B /* kAPPotUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		434CD995225EC08A0098BC1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 434CD978225EC0370098BC1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 434CD97F225EC0390098BC1B;
+			remoteInfo = kAPPot;
+		};
+		434CD9A0225EC08B0098BC1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 434CD978225EC0370098BC1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 434CD97F225EC0390098BC1B;
+			remoteInfo = kAPPot;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		434CD980225EC03A0098BC1B /* kAPPot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kAPPot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		434CD983225EC03A0098BC1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		434CD985225EC03B0098BC1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		434CD988225EC03B0098BC1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		434CD98A225EC0890098BC1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		434CD98D225EC0890098BC1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		434CD98F225EC0890098BC1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		434CD994225EC08A0098BC1B /* kAPPotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kAPPotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		434CD998225EC08A0098BC1B /* kAPPotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kAPPotTests.swift; sourceTree = "<group>"; };
+		434CD99A225EC08B0098BC1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		434CD99F225EC08B0098BC1B /* kAPPotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kAPPotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		434CD9A3225EC08B0098BC1B /* kAPPotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kAPPotUITests.swift; sourceTree = "<group>"; };
+		434CD9A5225EC08B0098BC1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		434CD97D225EC0390098BC1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		434CD991225EC08A0098BC1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		434CD99C225EC08B0098BC1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		434CD977225EC0360098BC1B = {
+			isa = PBXGroup;
+			children = (
+				434CD982225EC03A0098BC1B /* kAPPot */,
+				434CD997225EC08A0098BC1B /* kAPPotTests */,
+				434CD9A2225EC08B0098BC1B /* kAPPotUITests */,
+				434CD981225EC03A0098BC1B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		434CD981225EC03A0098BC1B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				434CD980225EC03A0098BC1B /* kAPPot.app */,
+				434CD994225EC08A0098BC1B /* kAPPotTests.xctest */,
+				434CD99F225EC08B0098BC1B /* kAPPotUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		434CD982225EC03A0098BC1B /* kAPPot */ = {
+			isa = PBXGroup;
+			children = (
+				434CD983225EC03A0098BC1B /* AppDelegate.swift */,
+				434CD985225EC03B0098BC1B /* ViewController.swift */,
+				434CD987225EC03B0098BC1B /* Main.storyboard */,
+				434CD98A225EC0890098BC1B /* Assets.xcassets */,
+				434CD98C225EC0890098BC1B /* LaunchScreen.storyboard */,
+				434CD98F225EC0890098BC1B /* Info.plist */,
+			);
+			path = kAPPot;
+			sourceTree = "<group>";
+		};
+		434CD997225EC08A0098BC1B /* kAPPotTests */ = {
+			isa = PBXGroup;
+			children = (
+				434CD998225EC08A0098BC1B /* kAPPotTests.swift */,
+				434CD99A225EC08B0098BC1B /* Info.plist */,
+			);
+			path = kAPPotTests;
+			sourceTree = "<group>";
+		};
+		434CD9A2225EC08B0098BC1B /* kAPPotUITests */ = {
+			isa = PBXGroup;
+			children = (
+				434CD9A3225EC08B0098BC1B /* kAPPotUITests.swift */,
+				434CD9A5225EC08B0098BC1B /* Info.plist */,
+			);
+			path = kAPPotUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		434CD97F225EC0390098BC1B /* kAPPot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 434CD9A8225EC08B0098BC1B /* Build configuration list for PBXNativeTarget "kAPPot" */;
+			buildPhases = (
+				434CD97C225EC0390098BC1B /* Sources */,
+				434CD97D225EC0390098BC1B /* Frameworks */,
+				434CD97E225EC0390098BC1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = kAPPot;
+			productName = kAPPot;
+			productReference = 434CD980225EC03A0098BC1B /* kAPPot.app */;
+			productType = "com.apple.product-type.application";
+		};
+		434CD993225EC08A0098BC1B /* kAPPotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 434CD9AB225EC08B0098BC1B /* Build configuration list for PBXNativeTarget "kAPPotTests" */;
+			buildPhases = (
+				434CD990225EC08A0098BC1B /* Sources */,
+				434CD991225EC08A0098BC1B /* Frameworks */,
+				434CD992225EC08A0098BC1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				434CD996225EC08A0098BC1B /* PBXTargetDependency */,
+			);
+			name = kAPPotTests;
+			productName = kAPPotTests;
+			productReference = 434CD994225EC08A0098BC1B /* kAPPotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		434CD99E225EC08B0098BC1B /* kAPPotUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 434CD9AE225EC08B0098BC1B /* Build configuration list for PBXNativeTarget "kAPPotUITests" */;
+			buildPhases = (
+				434CD99B225EC08B0098BC1B /* Sources */,
+				434CD99C225EC08B0098BC1B /* Frameworks */,
+				434CD99D225EC08B0098BC1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				434CD9A1225EC08B0098BC1B /* PBXTargetDependency */,
+			);
+			name = kAPPotUITests;
+			productName = kAPPotUITests;
+			productReference = 434CD99F225EC08B0098BC1B /* kAPPotUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		434CD978225EC0370098BC1B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "macOS Mojave";
+				TargetAttributes = {
+					434CD97F225EC0390098BC1B = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					434CD993225EC08A0098BC1B = {
+						CreatedOnToolsVersion = 10.2;
+						TestTargetID = 434CD97F225EC0390098BC1B;
+					};
+					434CD99E225EC08B0098BC1B = {
+						CreatedOnToolsVersion = 10.2;
+						TestTargetID = 434CD97F225EC0390098BC1B;
+					};
+				};
+			};
+			buildConfigurationList = 434CD97B225EC0380098BC1B /* Build configuration list for PBXProject "kAPPot" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 434CD977225EC0360098BC1B;
+			productRefGroup = 434CD981225EC03A0098BC1B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				434CD97F225EC0390098BC1B /* kAPPot */,
+				434CD993225EC08A0098BC1B /* kAPPotTests */,
+				434CD99E225EC08B0098BC1B /* kAPPotUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		434CD97E225EC0390098BC1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				434CD98E225EC0890098BC1B /* LaunchScreen.storyboard in Resources */,
+				434CD98B225EC0890098BC1B /* Assets.xcassets in Resources */,
+				434CD989225EC03B0098BC1B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		434CD992225EC08A0098BC1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		434CD99D225EC08B0098BC1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		434CD97C225EC0390098BC1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				434CD986225EC03B0098BC1B /* ViewController.swift in Sources */,
+				434CD984225EC03A0098BC1B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		434CD990225EC08A0098BC1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				434CD999225EC08A0098BC1B /* kAPPotTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		434CD99B225EC08B0098BC1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				434CD9A4225EC08B0098BC1B /* kAPPotUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		434CD996225EC08A0098BC1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 434CD97F225EC0390098BC1B /* kAPPot */;
+			targetProxy = 434CD995225EC08A0098BC1B /* PBXContainerItemProxy */;
+		};
+		434CD9A1225EC08B0098BC1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 434CD97F225EC0390098BC1B /* kAPPot */;
+			targetProxy = 434CD9A0225EC08B0098BC1B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		434CD987225EC03B0098BC1B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				434CD988225EC03B0098BC1B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		434CD98C225EC0890098BC1B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				434CD98D225EC0890098BC1B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		434CD9A6225EC08B0098BC1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		434CD9A7225EC08B0098BC1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		434CD9A9225EC08B0098BC1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2WV379SWJT;
+				INFOPLIST_FILE = kAPPot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Darmaghana.kAPPot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		434CD9AA225EC08B0098BC1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2WV379SWJT;
+				INFOPLIST_FILE = kAPPot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Darmaghana.kAPPot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		434CD9AC225EC08B0098BC1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2WV379SWJT;
+				INFOPLIST_FILE = kAPPotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Darmaghana.kAPPotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kAPPot.app/kAPPot";
+			};
+			name = Debug;
+		};
+		434CD9AD225EC08B0098BC1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2WV379SWJT;
+				INFOPLIST_FILE = kAPPotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Darmaghana.kAPPotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kAPPot.app/kAPPot";
+			};
+			name = Release;
+		};
+		434CD9AF225EC08B0098BC1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2WV379SWJT;
+				INFOPLIST_FILE = kAPPotUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Darmaghana.kAPPotUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = kAPPot;
+			};
+			name = Debug;
+		};
+		434CD9B0225EC08B0098BC1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2WV379SWJT;
+				INFOPLIST_FILE = kAPPotUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Darmaghana.kAPPotUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = kAPPot;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		434CD97B225EC0380098BC1B /* Build configuration list for PBXProject "kAPPot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				434CD9A6225EC08B0098BC1B /* Debug */,
+				434CD9A7225EC08B0098BC1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		434CD9A8225EC08B0098BC1B /* Build configuration list for PBXNativeTarget "kAPPot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				434CD9A9225EC08B0098BC1B /* Debug */,
+				434CD9AA225EC08B0098BC1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		434CD9AB225EC08B0098BC1B /* Build configuration list for PBXNativeTarget "kAPPotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				434CD9AC225EC08B0098BC1B /* Debug */,
+				434CD9AD225EC08B0098BC1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		434CD9AE225EC08B0098BC1B /* Build configuration list for PBXNativeTarget "kAPPotUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				434CD9AF225EC08B0098BC1B /* Debug */,
+				434CD9B0225EC08B0098BC1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 434CD978225EC0370098BC1B /* Project object */;
+}
