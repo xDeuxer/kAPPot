@@ -33,7 +33,7 @@ class LoginVC: UIViewController , FBSDKLoginButtonDelegate{
     
     
     @IBAction func buLogin(_ sender: Any) {
-        print("yo")
+
         Auth.auth().signIn(withEmail: txtEmail.text!, password: txtPassword.text!){
             (user,error) in
             if let error = error{
