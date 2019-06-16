@@ -21,6 +21,7 @@ class ProgressionScreenVC: UIViewController{
        print("test1")
         print("test2")
         print("test3")
+        print("tset4")
             //navigationController!.navigationBar.shadowImage = UIImage()
         //navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
         
