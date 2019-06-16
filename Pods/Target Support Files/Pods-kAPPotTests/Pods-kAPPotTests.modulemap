@@ -1,0 +1,6 @@
+framework module Pods_kAPPotTests {
+  umbrella header "Pods-kAPPotTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
