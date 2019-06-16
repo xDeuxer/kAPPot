@@ -3,17 +3,43 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		280AE06522B49F6600649FAA /* CartItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280AE06422B49F6600649FAA /* CartItemCollectionViewCell.swift */; };
+		280AE06B22B4A37400649FAA /* userCartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280AE06A22B4A37400649FAA /* userCartVC.swift */; };
+		280DF25322B5CFBC00CBA174 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280DF25222B5CFBC00CBA174 /* Order.swift */; };
+		280DF25522B5E8C900CBA174 /* item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280DF25422B5E8C900CBA174 /* item.swift */; };
+		281073B022B1EE7000E48262 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281073AF22B1EE7000E48262 /* CollectionViewCell.swift */; };
+		281073B422B20DC500E48262 /* SparePartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281073B322B20DC500E48262 /* SparePartCollectionViewCell.swift */; };
+		281073B622B2221E00E48262 /* OnlineShopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281073B522B2221E00E48262 /* OnlineShopVC.swift */; };
+		281297A622ACA684000A5067 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281297A522ACA684000A5067 /* MapVC.swift */; };
+		2830DB9122B4279C005F098F /* customNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830DB9022B4279C005F098F /* customNavBar.swift */; };
+		28B7CD6322B0883C0079B003 /* customButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B7CD6222B0883C0079B003 /* customButton.swift */; };
+		430C94A92282FECA00B37767 /* ShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430C94A82282FECA00B37767 /* ShopCollectionViewCell.swift */; };
+		430C94AB2283017C00B37767 /* ShopsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430C94AA2283017C00B37767 /* ShopsVC.swift */; };
+		431B9B0B22AB3F7E00C2BC93 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431B9B0A22AB3F7E00C2BC93 /* Shop.swift */; };
+		431C5A4322AB5C6900138585 /* SparePart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431C5A4222AB5C6900138585 /* SparePart.swift */; };
+		431C5A4522AB5CAB00138585 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431C5A4422AB5CAB00138585 /* Car.swift */; };
+		431C5A4722AB5D8500138585 /* RepairShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431C5A4622AB5D8500138585 /* RepairShop.swift */; };
+		431C5A4922AB5DA800138585 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431C5A4822AB5DA800138585 /* User.swift */; };
+		431C5A4B22AB5DD800138585 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431C5A4A22AB5DD800138585 /* Cart.swift */; };
 		434CD984225EC03A0098BC1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434CD983225EC03A0098BC1B /* AppDelegate.swift */; };
-		434CD986225EC03B0098BC1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434CD985225EC03B0098BC1B /* ViewController.swift */; };
 		434CD989225EC03B0098BC1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434CD987225EC03B0098BC1B /* Main.storyboard */; };
 		434CD98B225EC0890098BC1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 434CD98A225EC0890098BC1B /* Assets.xcassets */; };
 		434CD98E225EC0890098BC1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434CD98C225EC0890098BC1B /* LaunchScreen.storyboard */; };
 		434CD999225EC08A0098BC1B /* kAPPotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434CD998225EC08A0098BC1B /* kAPPotTests.swift */; };
 		434CD9A4225EC08B0098BC1B /* kAPPotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434CD9A3225EC08B0098BC1B /* kAPPotUITests.swift */; };
+		434CD9B8225EDE6A0098BC1B /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434CD9B7225EDE6A0098BC1B /* LoginVC.swift */; };
+		434CD9BA225F217E0098BC1B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 434CD9B9225F217E0098BC1B /* GoogleService-Info.plist */; };
+		435AC9342276472500F2D716 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435AC9332276472500F2D716 /* SignupVC.swift */; };
+		435AC936227648B100F2D716 /* ProgressionScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435AC935227648B100F2D716 /* ProgressionScreenVC.swift */; };
+		4373B20A227234B100E43FF4 /* CarSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4373B209227234B100E43FF4 /* CarSelectionVC.swift */; };
+		4373B230227628E500E43FF4 /* CarLogoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4373B22F227628E500E43FF4 /* CarLogoCollectionViewCell.swift */; };
+		A50BDC50C5425A552788F6B9 /* Pods_kAPPotUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50BACD96F5F719E49AC71473 /* Pods_kAPPotUITests.framework */; };
+		AD4C4AA7D08F6E783399181A /* Pods_kAPPot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 708BEEFB26FB2200F5CB083F /* Pods_kAPPot.framework */; };
+		C053112631D93CFF3BA70BA5 /* Pods_kAPPotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E421C5D6F9D6CA8F4967D392 /* Pods_kAPPotTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +60,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		280AE06422B49F6600649FAA /* CartItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		280AE06A22B4A37400649FAA /* userCartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userCartVC.swift; sourceTree = "<group>"; };
+		280DF25222B5CFBC00CBA174 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		280DF25422B5E8C900CBA174 /* item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = item.swift; sourceTree = "<group>"; };
+		281073AF22B1EE7000E48262 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		281073B322B20DC500E48262 /* SparePartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparePartCollectionViewCell.swift; sourceTree = "<group>"; };
+		281073B522B2221E00E48262 /* OnlineShopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineShopVC.swift; sourceTree = "<group>"; };
+		281297A522ACA684000A5067 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		2830DB9022B4279C005F098F /* customNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customNavBar.swift; sourceTree = "<group>"; };
+		28B7CD6222B0883C0079B003 /* customButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customButton.swift; sourceTree = "<group>"; };
+		311A9157C33FFDAAEE327C75 /* Pods-kAPPotUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kAPPotUITests.debug.xcconfig"; path = "Target Support Files/Pods-kAPPotUITests/Pods-kAPPotUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		394030609E9F3036FE5270F3 /* Pods-kAPPotTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kAPPotTests.debug.xcconfig"; path = "Target Support Files/Pods-kAPPotTests/Pods-kAPPotTests.debug.xcconfig"; sourceTree = "<group>"; };
+		430C94A82282FECA00B37767 /* ShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCollectionViewCell.swift; sourceTree = "<group>"; };
+		430C94AA2283017C00B37767 /* ShopsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopsVC.swift; sourceTree = "<group>"; };
+		431B9B0A22AB3F7E00C2BC93 /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
+		431C5A4222AB5C6900138585 /* SparePart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparePart.swift; sourceTree = "<group>"; };
+		431C5A4422AB5CAB00138585 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		431C5A4622AB5D8500138585 /* RepairShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepairShop.swift; sourceTree = "<group>"; };
+		431C5A4822AB5DA800138585 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		431C5A4A22AB5DD800138585 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		434CD980225EC03A0098BC1B /* kAPPot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kAPPot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		434CD983225EC03A0098BC1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		434CD985225EC03B0098BC1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		434CD988225EC03B0098BC1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		434CD98A225EC0890098BC1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		434CD98D225EC0890098BC1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +92,19 @@
 		434CD99F225EC08B0098BC1B /* kAPPotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kAPPotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		434CD9A3225EC08B0098BC1B /* kAPPotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kAPPotUITests.swift; sourceTree = "<group>"; };
 		434CD9A5225EC08B0098BC1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		434CD9B7225EDE6A0098BC1B /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		434CD9B9225F217E0098BC1B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		435AC9332276472500F2D716 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
+		435AC935227648B100F2D716 /* ProgressionScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionScreenVC.swift; sourceTree = "<group>"; };
+		4373B209227234B100E43FF4 /* CarSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSelectionVC.swift; sourceTree = "<group>"; };
+		4373B22F227628E500E43FF4 /* CarLogoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarLogoCollectionViewCell.swift; sourceTree = "<group>"; };
+		50BACD96F5F719E49AC71473 /* Pods_kAPPotUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kAPPotUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		708BEEFB26FB2200F5CB083F /* Pods_kAPPot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kAPPot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D71602CE15FE820E782966A /* Pods-kAPPotTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kAPPotTests.release.xcconfig"; path = "Target Support Files/Pods-kAPPotTests/Pods-kAPPotTests.release.xcconfig"; sourceTree = "<group>"; };
+		C5AEF4DA4DBB02437BCF91A8 /* Pods-kAPPot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kAPPot.release.xcconfig"; path = "Target Support Files/Pods-kAPPot/Pods-kAPPot.release.xcconfig"; sourceTree = "<group>"; };
+		C68C0DD5E1D365720A657F12 /* Pods-kAPPot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kAPPot.debug.xcconfig"; path = "Target Support Files/Pods-kAPPot/Pods-kAPPot.debug.xcconfig"; sourceTree = "<group>"; };
+		E421C5D6F9D6CA8F4967D392 /* Pods_kAPPotTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kAPPotTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9BB3DB38F99612410761D9E /* Pods-kAPPotUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kAPPotUITests.release.xcconfig"; path = "Target Support Files/Pods-kAPPotUITests/Pods-kAPPotUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD4C4AA7D08F6E783399181A /* Pods_kAPPot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C053112631D93CFF3BA70BA5 /* Pods_kAPPotTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +128,51 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A50BDC50C5425A552788F6B9 /* Pods_kAPPotUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22BB414790447C00910A26F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				708BEEFB26FB2200F5CB083F /* Pods_kAPPot.framework */,
+				E421C5D6F9D6CA8F4967D392 /* Pods_kAPPotTests.framework */,
+				50BACD96F5F719E49AC71473 /* Pods_kAPPotUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		281073AE22B1EE4300E48262 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				281073AF22B1EE7000E48262 /* CollectionViewCell.swift */,
+				2830DB9022B4279C005F098F /* customNavBar.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		281073B122B2092300E48262 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				4373B22F227628E500E43FF4 /* CarLogoCollectionViewCell.swift */,
+				430C94A82282FECA00B37767 /* ShopCollectionViewCell.swift */,
+				281073B322B20DC500E48262 /* SparePartCollectionViewCell.swift */,
+				280AE06422B49F6600649FAA /* CartItemCollectionViewCell.swift */,
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		281073B222B2095B00E48262 /* CustomClasses */ = {
+			isa = PBXGroup;
+			children = (
+				28B7CD6222B0883C0079B003 /* customButton.swift */,
+			);
+			path = CustomClasses;
+			sourceTree = "<group>";
+		};
 		434CD977225EC0360098BC1B = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +180,8 @@
 				434CD997225EC08A0098BC1B /* kAPPotTests */,
 				434CD9A2225EC08B0098BC1B /* kAPPotUITests */,
 				434CD981225EC03A0098BC1B /* Products */,
+				D7436844E9875C07AC2D2B33 /* Pods */,
+				22BB414790447C00910A26F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,11 +198,14 @@
 		434CD982225EC03A0098BC1B /* kAPPot */ = {
 			isa = PBXGroup;
 			children = (
-				434CD983225EC03A0098BC1B /* AppDelegate.swift */,
-				434CD985225EC03B0098BC1B /* ViewController.swift */,
-				434CD987225EC03B0098BC1B /* Main.storyboard */,
-				434CD98A225EC0890098BC1B /* Assets.xcassets */,
-				434CD98C225EC0890098BC1B /* LaunchScreen.storyboard */,
+				434CD9B3225EDC980098BC1B /* Controller */,
+				434CD9B5225EDCBB0098BC1B /* View */,
+				434CD9B4225EDCAC0098BC1B /* Model */,
+				281073B222B2095B00E48262 /* CustomClasses */,
+				281073B122B2092300E48262 /* CollectionViewCells */,
+				281073AE22B1EE4300E48262 /* Extensions */,
+				434CD9B6225EDCC50098BC1B /* Supported Files */,
+				434CD9B9225F217E0098BC1B /* GoogleService-Info.plist */,
 				434CD98F225EC0890098BC1B /* Info.plist */,
 			);
 			path = kAPPot;
@@ -125,6 +229,67 @@
 			path = kAPPotUITests;
 			sourceTree = "<group>";
 		};
+		434CD9B3225EDC980098BC1B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				430C94AA2283017C00B37767 /* ShopsVC.swift */,
+				434CD983225EC03A0098BC1B /* AppDelegate.swift */,
+				435AC935227648B100F2D716 /* ProgressionScreenVC.swift */,
+				435AC9332276472500F2D716 /* SignupVC.swift */,
+				434CD9B7225EDE6A0098BC1B /* LoginVC.swift */,
+				4373B209227234B100E43FF4 /* CarSelectionVC.swift */,
+				281297A522ACA684000A5067 /* MapVC.swift */,
+				281073B522B2221E00E48262 /* OnlineShopVC.swift */,
+				280AE06A22B4A37400649FAA /* userCartVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		434CD9B4225EDCAC0098BC1B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				431B9B0A22AB3F7E00C2BC93 /* Shop.swift */,
+				431C5A4222AB5C6900138585 /* SparePart.swift */,
+				431C5A4422AB5CAB00138585 /* Car.swift */,
+				431C5A4622AB5D8500138585 /* RepairShop.swift */,
+				431C5A4822AB5DA800138585 /* User.swift */,
+				431C5A4A22AB5DD800138585 /* Cart.swift */,
+				280DF25222B5CFBC00CBA174 /* Order.swift */,
+				280DF25422B5E8C900CBA174 /* item.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		434CD9B5225EDCBB0098BC1B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				434CD987225EC03B0098BC1B /* Main.storyboard */,
+				434CD98A225EC0890098BC1B /* Assets.xcassets */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		434CD9B6225EDCC50098BC1B /* Supported Files */ = {
+			isa = PBXGroup;
+			children = (
+				434CD98C225EC0890098BC1B /* LaunchScreen.storyboard */,
+			);
+			path = "Supported Files";
+			sourceTree = "<group>";
+		};
+		D7436844E9875C07AC2D2B33 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C68C0DD5E1D365720A657F12 /* Pods-kAPPot.debug.xcconfig */,
+				C5AEF4DA4DBB02437BCF91A8 /* Pods-kAPPot.release.xcconfig */,
+				394030609E9F3036FE5270F3 /* Pods-kAPPotTests.debug.xcconfig */,
+				9D71602CE15FE820E782966A /* Pods-kAPPotTests.release.xcconfig */,
+				311A9157C33FFDAAEE327C75 /* Pods-kAPPotUITests.debug.xcconfig */,
+				F9BB3DB38F99612410761D9E /* Pods-kAPPotUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +297,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 434CD9A8225EC08B0098BC1B /* Build configuration list for PBXNativeTarget "kAPPot" */;
 			buildPhases = (
+				AAA717EB1C72654E8225CC69 /* [CP] Check Pods Manifest.lock */,
 				434CD97C225EC0390098BC1B /* Sources */,
 				434CD97D225EC0390098BC1B /* Frameworks */,
 				434CD97E225EC0390098BC1B /* Resources */,
+				A02A96489BD542BD0AC1F1D2 /* [CP] Embed Pods Frameworks */,
+				E88DE54B8DCAD81B654D767E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,6 +317,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 434CD9AB225EC08B0098BC1B /* Build configuration list for PBXNativeTarget "kAPPotTests" */;
 			buildPhases = (
+				A4C7CF76662730042F545362 /* [CP] Check Pods Manifest.lock */,
 				434CD990225EC08A0098BC1B /* Sources */,
 				434CD991225EC08A0098BC1B /* Frameworks */,
 				434CD992225EC08A0098BC1B /* Resources */,
@@ -167,6 +336,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 434CD9AE225EC08B0098BC1B /* Build configuration list for PBXNativeTarget "kAPPotUITests" */;
 			buildPhases = (
+				67ED9932D7B8E25210172C9A /* [CP] Check Pods Manifest.lock */,
 				434CD99B225EC08B0098BC1B /* Sources */,
 				434CD99C225EC08B0098BC1B /* Frameworks */,
 				434CD99D225EC08B0098BC1B /* Resources */,
@@ -193,6 +363,11 @@
 				TargetAttributes = {
 					434CD97F225EC0390098BC1B = {
 						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 					434CD993225EC08A0098BC1B = {
 						CreatedOnToolsVersion = 10.2;
@@ -230,6 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				434CD98E225EC0890098BC1B /* LaunchScreen.storyboard in Resources */,
+				434CD9BA225F217E0098BC1B /* GoogleService-Info.plist in Resources */,
 				434CD98B225EC0890098BC1B /* Assets.xcassets in Resources */,
 				434CD989225EC03B0098BC1B /* Main.storyboard in Resources */,
 			);
@@ -251,13 +427,138 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		67ED9932D7B8E25210172C9A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-kAPPotUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A02A96489BD542BD0AC1F1D2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kAPPot/Pods-kAPPot-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kAPPot/Pods-kAPPot-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kAPPot/Pods-kAPPot-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4C7CF76662730042F545362 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-kAPPotTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AAA717EB1C72654E8225CC69 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-kAPPot-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E88DE54B8DCAD81B654D767E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kAPPot/Pods-kAPPot-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kAPPot/Pods-kAPPot-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kAPPot/Pods-kAPPot-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		434CD97C225EC0390098BC1B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				434CD986225EC03B0098BC1B /* ViewController.swift in Sources */,
+				431C5A4922AB5DA800138585 /* User.swift in Sources */,
+				435AC9342276472500F2D716 /* SignupVC.swift in Sources */,
+				281073B622B2221E00E48262 /* OnlineShopVC.swift in Sources */,
+				281073B022B1EE7000E48262 /* CollectionViewCell.swift in Sources */,
+				280DF25522B5E8C900CBA174 /* item.swift in Sources */,
+				434CD9B8225EDE6A0098BC1B /* LoginVC.swift in Sources */,
+				431C5A4B22AB5DD800138585 /* Cart.swift in Sources */,
+				28B7CD6322B0883C0079B003 /* customButton.swift in Sources */,
+				430C94A92282FECA00B37767 /* ShopCollectionViewCell.swift in Sources */,
 				434CD984225EC03A0098BC1B /* AppDelegate.swift in Sources */,
+				4373B230227628E500E43FF4 /* CarLogoCollectionViewCell.swift in Sources */,
+				435AC936227648B100F2D716 /* ProgressionScreenVC.swift in Sources */,
+				431B9B0B22AB3F7E00C2BC93 /* Shop.swift in Sources */,
+				431C5A4522AB5CAB00138585 /* Car.swift in Sources */,
+				280AE06B22B4A37400649FAA /* userCartVC.swift in Sources */,
+				281297A622ACA684000A5067 /* MapVC.swift in Sources */,
+				2830DB9122B4279C005F098F /* customNavBar.swift in Sources */,
+				431C5A4722AB5D8500138585 /* RepairShop.swift in Sources */,
+				430C94AB2283017C00B37767 /* ShopsVC.swift in Sources */,
+				281073B422B20DC500E48262 /* SparePartCollectionViewCell.swift in Sources */,
+				431C5A4322AB5C6900138585 /* SparePart.swift in Sources */,
+				280DF25322B5CFBC00CBA174 /* Order.swift in Sources */,
+				280AE06522B49F6600649FAA /* CartItemCollectionViewCell.swift in Sources */,
+				4373B20A227234B100E43FF4 /* CarSelectionVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,42 +731,47 @@
 		};
 		434CD9A9225EC08B0098BC1B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C68C0DD5E1D365720A657F12 /* Pods-kAPPot.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2WV379SWJT;
 				INFOPLIST_FILE = kAPPot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Darmaghana.kAPPot;
+				PRODUCT_BUNDLE_IDENTIFIER = Darmaghana.KAPPot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		434CD9AA225EC08B0098BC1B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5AEF4DA4DBB02437BCF91A8 /* Pods-kAPPot.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2WV379SWJT;
 				INFOPLIST_FILE = kAPPot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Darmaghana.kAPPot;
+				PRODUCT_BUNDLE_IDENTIFIER = Darmaghana.KAPPot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		434CD9AC225EC08B0098BC1B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 394030609E9F3036FE5270F3 /* Pods-kAPPotTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -487,6 +793,7 @@
 		};
 		434CD9AD225EC08B0098BC1B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D71602CE15FE820E782966A /* Pods-kAPPotTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +815,7 @@
 		};
 		434CD9AF225EC08B0098BC1B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 311A9157C33FFDAAEE327C75 /* Pods-kAPPotUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -528,6 +836,7 @@
 		};
 		434CD9B0225EC08B0098BC1B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9BB3DB38F99612410761D9E /* Pods-kAPPotUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
