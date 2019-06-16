@@ -24,6 +24,8 @@ class CarSelectionVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("kos om l nagasa")
+        //////////////////////
         navigationController?.customNavBar()
 
         self.ServiceButtons.isHidden=true
