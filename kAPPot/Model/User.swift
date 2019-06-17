@@ -14,9 +14,11 @@ class User: NSObject , CLLocationManagerDelegate{
     
     
     //user attributes in db
-    var name : String!
-    var email : String!
-    var password : String!
+    var name : String = ""
+    var email : String = ""
+    var password : String = ""
+    var car = Car()
+    var cart = Cart()
     
     init(name : String , email : String , password : String)
     {
@@ -25,13 +27,39 @@ class User: NSObject , CLLocationManagerDelegate{
         self.password = password
     }
     
-    func signup()
+    func signup() -> Bool
     {
-        
+        var bool = false
+        Firestore.firestore().collection("User").document("\(self.email)").setData([
+            "name" : "",
+            "email" : "",
+            "password" : "",
+            "car" : ""
+        ]) { err in
+            if let err = err {
+                
+                print("Error writing document: \(err)")
+            } else {
+                bool = true
+                print("Document successfully written!")
+            }
+        }
+        return bool
+    }
+    func setUserCar(carModel : String)
+    {
+        self.car.setCarModel(carModel: carModel)
+        Firestore.firestore().collection("User").document("\(self.email)").updateData([
+            "car": "\(carModel)"
+        ]) { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Document successfully updated")
+            }
+        }
         
     }
-    //func sign up
-    
     
     class func getUserLocation() -> CLLocationCoordinate2D
     {

@@ -24,6 +24,13 @@ class SignupVC: UIViewController {
         // Do any additional setup after loading the view.
     
     }
+    func showAlert(error : String) {
+        let alertController = UIAlertController(title: "Error", message:"\(error)", preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        
+        alertController.addAction(defaultAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
     
     @IBAction func buRegister(_ sender: Any) {
         
@@ -35,17 +42,29 @@ class SignupVC: UIViewController {
             self.present(alertController, animated: true, completion: nil)
         }
         else{
-            
+            if (userName.text!.isEmpty) {
+                let alertController = UIAlertController(title: "Error", message: "please enter your Name", preferredStyle: .alert)
+                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                
+                alertController.addAction(defaultAction)
+                self.present(alertController, animated: true, completion: nil)
+                return
+            }
             Auth.auth().createUser(withEmail: email.text!, password: password.text!){ (user, error) in
                 if error == nil {
-                    self.performSegue(withIdentifier: "goToCarSelectionFromRegister", sender: self)
+                    let user = User(name: self.userName.text!, email: self.email.text!, password: self.password.text!)
+                    if(user.signup())
+                    {
+                        
+                        self.performSegue(withIdentifier: "goToCarSelectionFromRegister", sender: self)
+                    }
+                    else
+                    {
+                        self.showAlert(error: "something went wrong while regestring")
+                    }
                 }
                 else{
-                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    
-                    alertController.addAction(defaultAction)
-                    self.present(alertController, animated: true, completion: nil)
+                    self.showAlert(error: error!.localizedDescription)
                 }
             }
         }
