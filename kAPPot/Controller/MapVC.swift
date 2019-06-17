@@ -24,9 +24,9 @@ class MapVC: UIViewController , MKMapViewDelegate ,CLLocationManagerDelegate{
     var destination:CLLocationCoordinate2D!
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
             self.userLocation = User.getUserLocation()
             self.map.showsUserLocation = true
         
@@ -121,4 +121,38 @@ class MapVC: UIViewController , MKMapViewDelegate ,CLLocationManagerDelegate{
 
     }
     
+    
+
+    
+    
+    func getDistanceFromUser(userLocation: CLLocationCoordinate2D ,shopLocation: CLLocationCoordinate2D) -> Double {
+        let distanceFromUser = CLLocation.distance(from: userLocation, to: shopLocation)
+        return distanceFromUser / 1000
+        
+    }
+    
+    
+    func sortByDistance(Distance: [String : Double])  {
+        Distance.sorted(by: < )
+    }
+    
+    
+    func getSortedDistance(shopsSortedDistances: [String : Double] , key: String) -> Double {
+        let currentDistance = shopsSortedDistances["key"]!
+        return currentDistance
+    }
+
+    
+    
 }
+
+extension CLLocation {
+    
+    //Returns Distance in meters
+    class func distance(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) -> CLLocationDistance {
+        let from = CLLocation(latitude: from.latitude, longitude: from.longitude)
+        let to = CLLocation(latitude: to.latitude, longitude: to.longitude)
+        return from.distance(from: to)
+    }
+}
+
