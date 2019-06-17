@@ -8,7 +8,8 @@
 
 import FirebaseFirestore
 
-
+import CoreLocation
+import MapKit
 
 class Shop{
     
@@ -16,6 +17,10 @@ class Shop{
     var rating:Double = 0.0
     var location:[[String : Double]] = []
     var telephoneNo:[Int] = []
+    
+    
+    
+    
     
     func setShopName(shopname:String) {
         self.ShopName = shopname
@@ -87,7 +92,26 @@ class Shop{
         temp.rating  = JsonObject["rating"] as! Double
         return temp
     }
+    
+    
+    
+    
+    
 }
 
 
-
+/*
+ func getDistance(userLocation: CLLocation , shopLocation: CLLocation) -> Double {
+ let Distance = userLocation.distance(from: shopLocation)
+ return Distance / 1000
+ }
+ 
+ func sortByDistance(Distance: [String : Double])  {
+ Distance.sorted(by: < )
+ }
+ 
+ func getSortedDistance(shopsSortedDistances: [String : Double] , key: String) -> Double {
+ let currentDistance = shopsSortedDistances["key"] ?? 40
+ return currentDistance
+ }
+ */

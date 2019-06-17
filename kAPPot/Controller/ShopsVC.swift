@@ -68,7 +68,7 @@ extension ShopsVC: UICollectionViewDataSource , UICollectionViewDelegate
             
         
             // cell.shopDistance.text=shopDistance[indexPath.row]
-            
+        
             cell.delegate=self
             
             cell.setShop(shop: self.Shops[indexPath.row])
