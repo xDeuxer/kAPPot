@@ -12,7 +12,7 @@ import CoreLocation
 
 class User: NSObject , CLLocationManagerDelegate{
     
-    
+    static var loggedInUser = User()
     //user attributes in db
     var name : String = ""
     var email : String = ""
@@ -20,6 +20,9 @@ class User: NSObject , CLLocationManagerDelegate{
     var car = Car()
     var cart = Cart()
     
+    override init() {
+        
+    }
     init(name : String , email : String , password : String)
     {
         self.name = name
@@ -29,23 +32,44 @@ class User: NSObject , CLLocationManagerDelegate{
     
     func signup() -> Bool
     {
-        var bool = false
+        var bool = true
         Firestore.firestore().collection("User").document("\(self.email)").setData([
-            "name" : "",
-            "email" : "",
-            "password" : "",
+            "name" : "\(self.name)",
+            "email" : "\(self.email)",
+            "password" : "\(self.password)",
             "car" : ""
         ]) { err in
             if let err = err {
-                
+                bool = false
                 print("Error writing document: \(err)")
             } else {
-                bool = true
                 print("Document successfully written!")
             }
         }
         return bool
     }
+    
+    class func signin(email : String,completion: @escaping (Result<User,Error>) -> ())
+    {
+        var user = User()
+        Firestore.firestore().collection("User").document("\(email)").getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dataDescription = document.data()
+                guard let docData = dataDescription as? [String : String] else { return }
+                user = User(name: docData["name"]!, email: email, password: docData["password"]!)
+                user.car.setCarModel(carModel: docData["car"]!)
+                completion(.success(user))
+               // print("Document data: \(dataDescription)")
+             //   dump(user)
+            } else {
+                completion(.failure(error!))
+                print("Document does not exist")
+            }
+            
+        }
+        
+    }
+    
     func setUserCar(carModel : String)
     {
         self.car.setCarModel(carModel: carModel)
@@ -61,9 +85,9 @@ class User: NSObject , CLLocationManagerDelegate{
         
     }
     
-    class func getUserLocation() -> CLLocationCoordinate2D
+    class func getUserLocation(completion: @escaping (Result<CLLocationCoordinate2D,Error>) -> ())
     {
-        let defaultLoc = CLLocationCoordinate2DMake(30.031218, 31.21052)
+        var defaultLoc = CLLocationCoordinate2DMake(29.964046,30.948015)//(30.031218, 31.21052)
         let locationManager = CLLocationManager()
         func checkForLocationService()
         {
@@ -88,22 +112,23 @@ class User: NSObject , CLLocationManagerDelegate{
             locationManager.startUpdatingLocation()
         }
         func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-            let location = locations[locations.count - 1]
+            defaultLoc = locations[locations.count - 1].coordinate
             //let myloc = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
             //userLocation = myloc
-            if location.horizontalAccuracy > 0{
+            if locations[locations.count - 1].horizontalAccuracy > 0{
                 locationManager.stopUpdatingLocation()
+                completion(.success(defaultLoc))
                 
                 //  createMarker(titleMarker: "me", iconMarker: UIImage(named : "MapCar")!, snippet: "cairo uni", latitude: myloc.latitude, longitude: myloc.longitude)
                 
             }
         }
         func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-            print(error)
+            completion(.failure(error))
         }
         func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
             checkForLocationService()
         }
-        return (locationManager.location?.coordinate)! 
+        completion(.success(defaultLoc))
     }
 }

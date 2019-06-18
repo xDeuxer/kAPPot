@@ -26,29 +26,41 @@ class MapVC: UIViewController , MKMapViewDelegate ,CLLocationManagerDelegate{
     
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-            self.userLocation = User.getUserLocation()
-            self.map.showsUserLocation = true
-        
-            moveCameraToUserLocation()
-        if selectedShop.getLocations().count == 1 {
-            let destination = CLLocationCoordinate2DMake(selectedShop.getLocations()[0]["lat"]!, selectedShop.getLocations()[0]["long"]!)
-            drawPath(userLocation: self.userLocation, destination: destination)
-        }
-        else
-        {
-            selectedShop.getLocations().forEach { (location) in
-                createMarker(titleMarker: selectedShop.getShopName(), ShopLocation: location, subtitle: "\(selectedShop.getShopName()) for repair shops")
+        //super.viewDidLoad()
+        loadUserLocation(){ () in
+            if self.selectedShop.getLocations().count == 1 {
+                let destination = CLLocationCoordinate2DMake(self.selectedShop.getLocations()[0]["lat"]!, self.selectedShop.getLocations()[0]["long"]!)
+                self.createMarker(titleMarker: self.selectedShop.getShopName(), ShopLocation: self.selectedShop.getLocations()[0], subtitle: "\(self.selectedShop.getShopName()) for repair shops")
+                self.drawPath(userLocation: self.userLocation, destination: destination)
             }
-        }
+            else
+            {
+                self.selectedShop.getLocations().forEach { (location) in
+                    self.createMarker(titleMarker: self.selectedShop.getShopName(), ShopLocation: location, subtitle: "\(self.selectedShop.getShopName()) for repair shops")
+                }
+            }
             self.map.delegate = self
-        
-        
+            super.viewDidLoad()
+        }
         
     }
-    func loadUserLocation(completion: @escaping () -> ()) {
-        self.userLocation = User.getUserLocation()
-        completion()
+    func loadUserLocation(completion : @escaping () -> ()) {
+        User.getUserLocation { (res) in
+            switch res
+            {
+                
+            case .success(let location):
+                self.userLocation = location
+                //self.userLocation = CLLocationCoordinate2DMake(30.031218, 31.21052)
+                print(self.userLocation)
+                self.map.showsUserLocation = true
+                self.moveCameraToUserLocation()
+                completion()
+            case .failure(let error):
+                print(error)
+                completion()
+            }
+        }
         
     }
     func createMarker(titleMarker: String,ShopLocation: [String : Double],subtitle: String) {

@@ -40,6 +40,19 @@ class LoginVC: UIViewController , FBSDKLoginButtonDelegate{
                 print("OOPAAAAAA1 :")
                 print(error)
             }else{
+                User.signin(email: self.txtEmail.text!
+                    , completion: { (res) in
+                        switch res
+                        {
+                            
+                        case .success(let user):
+                            User.loggedInUser = user
+                            dump(User.loggedInUser)
+                            
+                        case .failure(let error):
+                            print(error)
+                        }
+                })
                 print("User UID: \(String(describing: Auth.auth().currentUser!.email))")
                 
                 //move to car selection VC

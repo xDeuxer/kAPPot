@@ -18,9 +18,9 @@ class Car {
     func getCarModel() -> String {
         return self.carModel
     }
-    func getAllCarSpares(car : String , completion: @escaping (Result<[SparePart],Error>) -> ())
+    func getAllCarSpares(completion: @escaping (Result<[SparePart],Error>) -> ())
     {
-        var temp : [SparePart] = []
+        //var temp : [SparePart] = []
         let basicQuery = Firestore.firestore().collection("car_spares")
         basicQuery.addSnapshotListener { (snapshot, error) in
             if let error = error {
@@ -34,12 +34,13 @@ class Car {
                     let arr = spare.data()
                     guard let spareParts = arr["spares"] as? [[String : Any]] else{ return }
                     spareParts.forEach({ (carSpare) in
-                        temp.append(SparePart.convertToSparePart(JsonSpare: carSpare))
+                        let temp = SparePart(spareName: carSpare["name"] as! String, img_url: carSpare["img_url"] as! String, price: carSpare["price"] as! Int)
+                        self.CarSpares.append(temp)
                     })
                 }
             }
             // print(temp)
-            completion(.success(temp))
+            completion(.success(self.CarSpares))
         }
         
     }

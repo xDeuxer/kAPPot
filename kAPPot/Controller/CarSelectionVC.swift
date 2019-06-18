@@ -24,7 +24,6 @@ class CarSelectionVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("kos om l nagasa")
         //////////////////////
         navigationController?.customNavBar()
 
@@ -42,7 +41,7 @@ class CarSelectionVC: UIViewController {
     
     func loadDataforView(completion: @escaping () -> Void) {
         self.Shops.removeAll()
-        self.ShopReference.getAllCarShops(carType: self.carType) { (res) in
+        self.ShopReference.getAllCarShops(carType: User.loggedInUser.car.getCarModel()) { (res) in
             
             switch res
             {
@@ -133,6 +132,7 @@ extension CarSelectionVC : carCellDelegate , UICollectionViewDelegate , UICollec
     func LogoTapped(name : String)
     {
         carType=name
+        User.loggedInUser.setUserCar(carModel: name)
         print(name)
         self.ServiceButtons.isHidden=false
         
