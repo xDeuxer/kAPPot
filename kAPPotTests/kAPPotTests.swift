@@ -22,6 +22,22 @@ class kAPPotTests: XCTestCase {
         XCTAssertEqual(round(testDistance/1000), 4)
         
     }
+    
+    func testSortByDistance(){
+        let shopArray = [20.0 , 2.0 , 1.0 ]
+        let sortedShopArray = ShopsVC.sortByDistance(shopDistances: shopArray)
+        
+        let myTest = [1.0 , 2.0 , 20.0]
+        
+        XCTAssertEqual(sortedShopArray, myTest)
+        
+    }
+    /*
+    func XCTAssertEqualDictionaries<S, T: Equatable>(first: [S:T], _ second: [S:T]) {
+        let ShopsDictionary = ["shop1" : 20.0 , "shop2" : 2.0 , "shop3" : 4.0]
+        let shopRef = ShopsVC.sortByDistance(Distance: ShopsDictionary)
+        XCTAssertEqualDictionaries(first: shopRef, ShopsDictionary)
+    }*/
 
 }
 

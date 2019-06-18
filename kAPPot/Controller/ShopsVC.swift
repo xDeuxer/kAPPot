@@ -8,6 +8,7 @@
 // defined car_storeModel 3shan a2ra mno instance -
 
 import UIKit
+import CoreLocation
 
 class ShopsVC:  UIViewController {
     
@@ -22,6 +23,9 @@ class ShopsVC:  UIViewController {
     var repairType : String = ""
     
 
+    
+    
+    
     @IBAction func dropDownHandle(_ sender: UIButton) {
         UIView.animate(withDuration: 0.3) {
             self.sortOptions.isHidden = !self.sortOptions.isHidden
@@ -130,6 +134,42 @@ extension ShopsVC : ShopCellDelegate
         
     }
    
+}
+
+
+extension ShopsVC{
+    
+    func getDistanceFromUser(userLocation: CLLocationCoordinate2D ,shopLocation: CLLocationCoordinate2D) -> Double {
+        let distanceFromUser = CLLocation.distance(from: userLocation, to: shopLocation)
+        return distanceFromUser / 1000
+        
+    }
+    
+    
+    class func sortByDistance(shopDistances: [Double])  -> [Double] {
+        
+        let sortedShopDistance = shopDistances.sorted(by: { $0 < $1 })
+        print(sortedShopDistance)
+        return sortedShopDistance
+    }
+    
+    
+    func getSortedDistance(shopsSortedDistances: [String : Double] , key: String) -> Double {
+        let currentDistance = shopsSortedDistances["key"]!
+        return currentDistance
+    }
+    
+}
+
+
+extension CLLocation {
+    
+    //Returns Distance in meters
+    class func distance(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) -> CLLocationDistance {
+        let from = CLLocation(latitude: from.latitude, longitude: from.longitude)
+        let to = CLLocation(latitude: to.latitude, longitude: to.longitude)
+        return from.distance(from: to)
+    }
 }
 
 

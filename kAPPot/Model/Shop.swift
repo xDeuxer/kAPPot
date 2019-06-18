@@ -17,7 +17,7 @@ class Shop{
     var rating:Double = 0.0
     var location:[[String : Double]] = []
     var telephoneNo:[Int] = []
-    
+    var distance:Double = 0.0
     
     
     

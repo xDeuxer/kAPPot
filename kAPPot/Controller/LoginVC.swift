@@ -29,10 +29,12 @@ class LoginVC: UIViewController , FBSDKLoginButtonDelegate{
         facebookLoginButton.delegate=self
         facebookLoginButton.readPermissions=["email"]
         
+        
     }
     
     
     @IBAction func buLogin(_ sender: Any) {
+        
 
         Auth.auth().signIn(withEmail: txtEmail.text!, password: txtPassword.text!){
             (user,error) in

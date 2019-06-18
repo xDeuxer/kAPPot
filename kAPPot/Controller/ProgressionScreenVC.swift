@@ -17,7 +17,8 @@ class ProgressionScreenVC: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.customNavBar()
-        
+        //ShopsVC.sortByDistance(Distance: ["shop1" : 20.0 , "shop2" : 2.0 , "shop3" : 4.0] )
+
        print("test1")
         print("test2")
         print("test3")
