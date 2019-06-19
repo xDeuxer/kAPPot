@@ -74,10 +74,8 @@ class Shop{
                     guard let carShops = arr["Shops"] as? [[String : Any]] else{ return }
                     carShops.forEach({ (shop) in
               
-                        let shop = Shop.convertToShop(JsonObject: shop)
-                        //let shopDistance= CLLocationCoordinate2DMake(shop.location, <#T##longitude: CLLocationDegrees##CLLocationDegrees#>)
-                        //shop.setDistanceFromUser(userLocation: , shopLocation: <#T##CLLocationCoordinate2D#>)
-                        temp.append(shop)
+                       
+                        temp.append(Shop.convertToShop(JsonObject: shop))
                     })
                 }
             }

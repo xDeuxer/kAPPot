@@ -17,7 +17,7 @@ class CarSelectionVC: UIViewController {
     
     var ShopReference : Shop = Shop()
     var Shops = [Shop]()
-    let carLogos = ["Kia","Mercedes","Hyundai","BMW","Nissan","Chevrolet","Honda","Jeep","Proton"]
+    let carLogos = ["Kia","Mercedes","Hyundai","Nissan","Chevrolet","Honda","Jeep","Proton" , "BMW"]
     
     @IBOutlet weak var ServiceButtons: UIStackView!
     @IBOutlet weak var RepairTypes: UIStackView!
