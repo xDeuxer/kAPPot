@@ -17,7 +17,7 @@ class Shop{
     var rating:Double = 0.0
     var location:[[String : Double]] = []
     var telephoneNo:[Int] = []
-    
+    var distance : Double = 0.0
     
     
     
@@ -73,7 +73,11 @@ class Shop{
                     let arr = car.data()
                     guard let carShops = arr["Shops"] as? [[String : Any]] else{ return }
                     carShops.forEach({ (shop) in
-                        temp.append(Shop.convertToShop(JsonObject: shop))
+              
+                        let shop = Shop.convertToShop(JsonObject: shop)
+                        //let shopDistance= CLLocationCoordinate2DMake(shop.location, <#T##longitude: CLLocationDegrees##CLLocationDegrees#>)
+                        //shop.setDistanceFromUser(userLocation: , shopLocation: <#T##CLLocationCoordinate2D#>)
+                        temp.append(shop)
                     })
                 }
             }
@@ -93,6 +97,18 @@ class Shop{
         return temp
     }
     
+    func setDistanceFromUser(userLocation: CLLocationCoordinate2D ,shopLocation: CLLocationCoordinate2D){
+        let distanceFromUser = CLLocation.distance(from: userLocation, to: shopLocation)
+        self.distance = distanceFromUser / 1000
+        
+    }
+    class func sortByDistance(shops: [Shop])  -> [Shop] {
+        
+        //let sortedShopDistance = shopDistances.sorted(by: { $0 < $1 })
+        let sortedShopDistance = shops.sorted(by: { $0.distance < $1.distance })
+        //print(sortedShopDistance)
+        return sortedShopDistance
+    }
     
     
     

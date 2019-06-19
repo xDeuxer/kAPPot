@@ -14,14 +14,20 @@ protocol sparePartCellDelegate {
 class SparePartCollectionViewCell: UICollectionViewCell {
     
     var currentSparePart = SparePart()
-    @IBOutlet weak var sparePartImage: UIImageView!
+    @IBOutlet weak var Image: UIImageView!
     
-    @IBOutlet weak var sparePartDescirption: UILabel!
-    @IBOutlet weak var sparePartPrice: UILabel!
+    @IBOutlet weak var Name: UILabel!
+    @IBOutlet weak var Price: UILabel!
     
     
     var delegate : sparePartCellDelegate?
     
+    func setSparePart(sparepart : SparePart)
+    {
+        //sparePartImage = sparepart.getImgUrl()
+        Name.text = sparepart.getName()
+        Price.text = "\(sparepart.getPrice())"
+    }
     @IBAction func addSpareToCart(_ sender: UIButton) {
         delegate?.addSpareToCart(sparePart: currentSparePart)
     }

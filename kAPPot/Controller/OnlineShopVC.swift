@@ -29,7 +29,7 @@ class OnlineShopVC: UIViewController {
     func loadShopData(){
         self.shopName.text=selectedOnlineShop.getShopName()
         self.PhoneNos.text="\(selectedOnlineShop.getTelephoneNo())"
-        //self.shopImage.image = UIImage(named :"\(selectedOnlineShop.SupportedCar.getCarModel())")
+        self.shopImage.image = UIImage(named :"\(User.loggedInUser.car.getCarModel())")
     }
     
     @IBAction func getDirections(_ sender: UIButton) {
@@ -47,7 +47,8 @@ extension OnlineShopVC : UICollectionViewDelegate , UICollectionViewDataSource
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 1
+        print (shopSpareParts.count)
+        return shopSpareParts.count
         
     }
     
@@ -57,7 +58,7 @@ extension OnlineShopVC : UICollectionViewDelegate , UICollectionViewDataSource
         
         
         
-     //   cell.sparePartImage.image=UIImage(named :"\(selectedOnlineShop.SupportedCar.getCarModel())")
+        cell.setSparePart(sparepart: shopSpareParts[indexPath.row])
         
         cell.delegate=self
         

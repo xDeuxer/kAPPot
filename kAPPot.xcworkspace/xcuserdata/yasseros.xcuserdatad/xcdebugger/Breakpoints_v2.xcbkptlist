@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "kAPPot/Controller/MapVC.swift"
-            timestampString = "582241731.2859941"
+            timestampString = "582603679.525713"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "103"
             endingLineNumber = "103"
-            landmarkName = "mapView(_:rendererFor:)"
+            landmarkName = "moveCameraToUserLocation()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

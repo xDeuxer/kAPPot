@@ -20,28 +20,30 @@ class ShopsVC:  UIViewController {
     var Shops : [Shop] = []
     var selectdShop = Shop()
     var repairType : String = ""
+    var carSpares = [SparePart]()
     
 
-    @IBAction func dropDownHandle(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.3) {
-            self.sortOptions.isHidden = !self.sortOptions.isHidden
-            self.view.layoutIfNeeded()
-        }
-    }
-    
-
-    @IBAction func sortOptionChanged(_ sender: UIButton) {
-            let temp = dropDownHandle.currentTitle
-            dropDownHandle.setTitle(sender.currentTitle, for: .normal)
-            sender.setTitle(temp, for: .normal)
-        sender.isHidden = !sender.isHidden
-        
-        
-    }
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
+    }
+    func loadCarSpares(completion: @escaping () -> Void) {
+        self.carSpares.removeAll()
+        User.loggedInUser.car.getAllCarSpares{ (res) in
+            
+            switch res
+            {
+                
+            case .success(let retrievedSpares):
+                
+                self.carSpares = retrievedSpares
+                completion()
+            case .failure(let error):
+                print("\(error)")
+                completion()
+            }
+        }
     }
    
     @IBAction func applySort(_ sender: UIButton) {
@@ -50,7 +52,27 @@ class ShopsVC:  UIViewController {
        // shopsCollectionView.reloadData()
     }
     
+    
+    @IBAction func dropDownHandle(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.3) {
+            self.sortOptions.isHidden = !self.sortOptions.isHidden
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    
+    @IBAction func sortOptionChanged(_ sender: UIButton) {
+        let temp = dropDownHandle.currentTitle
+        dropDownHandle.setTitle(sender.currentTitle, for: .normal)
+        sender.setTitle(temp, for: .normal)
+        sender.isHidden = !sender.isHidden
+        
+        
+    }
+    
 }
+
+
 
 extension ShopsVC: UICollectionViewDataSource , UICollectionViewDelegate
 {
@@ -102,17 +124,25 @@ extension ShopsVC: UICollectionViewDataSource , UICollectionViewDelegate
     }
 }
 
+
+
+
 extension ShopsVC : ShopCellDelegate
 {
-    
-    
+
     func getDirections(shop : Shop) {
         self.selectdShop = shop
         self.performSegue(withIdentifier: "GoToMap", sender: self)
     }
     func shopOnline(shop : Shop) {
-        self.selectdShop = shop
-        self.performSegue(withIdentifier: "GoToOnlineShop", sender: self)
+        loadCarSpares {
+            DispatchQueue.main.async {
+                self.selectdShop = shop
+                self.performSegue(withIdentifier: "GoToOnlineShop", sender: self)
+            }
+        }
+        
+   
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -124,6 +154,7 @@ extension ShopsVC : ShopCellDelegate
         }else{
             let vc = segue.destination as! OnlineShopVC
             vc.selectedOnlineShop=self.selectdShop
+            vc.shopSpareParts = self.carSpares
             
         }
         
