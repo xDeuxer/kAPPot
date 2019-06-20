@@ -48,6 +48,10 @@ class LoginVC: UIViewController , FBSDKLoginButtonDelegate{
                         case .success(let user):
                             User.loggedInUser = user
                             dump(User.loggedInUser)
+                            DispatchQueue.main.async {
+                                self.performSegue(withIdentifier: "goToCarSelectionFromLogIn", sender: self)
+                            }
+                            
                             
                         case .failure(let error):
                             print(error)
@@ -56,7 +60,7 @@ class LoginVC: UIViewController , FBSDKLoginButtonDelegate{
                 print("User UID: \(String(describing: Auth.auth().currentUser!.email))")
                 
                 //move to car selection VC
-                self.performSegue(withIdentifier: "goToCarSelectionFromLogIn", sender: self)
+                
             }
             
         }

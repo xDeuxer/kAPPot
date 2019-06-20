@@ -58,6 +58,27 @@ class User: NSObject , CLLocationManagerDelegate{
                 guard let docData = dataDescription as? [String : String] else { return }
                 user = User(name: docData["name"]!, email: email, password: docData["password"]!)
                 user.car.setCarModel(carModel: docData["car"]!)
+                DispatchQueue.main.async {
+                    Firestore.firestore().collection("Cart").document("\(email)").getDocument { (document, error) in
+                        if let document = document, document.exists {
+                            let dataDescription = document.data()
+                            guard let docData = dataDescription!["spares"] as? [[String : Any]] else { return }
+                            docData.forEach({ (spareItem) in
+                                user.cart.items.append(item.createItem(spareName: spareItem["name"] as! String, img_url: spareItem["img_url"] as! String, price: spareItem["price"] as! Int, quantity: spareItem["quantity"] as! Int))
+                            })
+                            
+                            
+                            completion(.success(user))
+                            // print("Document data: \(dataDescription)")
+                            //   dump(user)
+                        } else {
+                            completion(.failure(error!))
+                            print("Document does not exist")
+                        }
+                        
+                    }
+                    
+                }
                 completion(.success(user))
                // print("Document data: \(dataDescription)")
              //   dump(user)
@@ -67,6 +88,7 @@ class User: NSObject , CLLocationManagerDelegate{
             }
             
         }
+        
         
     }
     

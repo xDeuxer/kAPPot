@@ -48,8 +48,8 @@ class ShopsVC:  UIViewController {
    
     @IBAction func applySort(_ sender: UIButton) {
         
-        // apply sort function
-       // shopsCollectionView.reloadData()
+        Shops = Shop.sortByDistance(shops: Shops)
+        shopsCollectionView.reloadData()
     }
     
     

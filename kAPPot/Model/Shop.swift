@@ -74,8 +74,19 @@ class Shop{
                     guard let carShops = arr["Shops"] as? [[String : Any]] else{ return }
                     carShops.forEach({ (shop) in
               
-                       
-                        temp.append(Shop.convertToShop(JsonObject: shop))
+                       let retrievedShop = Shop.convertToShop(JsonObject: shop)
+                        User.getUserLocation(completion: { (res) in
+                            switch res
+                            {
+                                
+                            case .success(let userlocation):
+                                retrievedShop.setDistanceFromUser(userLocation: userlocation, shopLocation: CLLocationCoordinate2DMake(retrievedShop.getLocations()[0]["lat"]!, retrievedShop.getLocations()[0]["long"]!))
+                                    temp.append(retrievedShop)
+                            case .failure(let error):
+                                print(error)
+                            }
+                        })
+                        
                     })
                 }
             }
@@ -97,15 +108,18 @@ class Shop{
     
     func setDistanceFromUser(userLocation: CLLocationCoordinate2D ,shopLocation: CLLocationCoordinate2D){
         let distanceFromUser = CLLocation.distance(from: userLocation, to: shopLocation)
-        self.distance = distanceFromUser / 1000
+        
+        self.distance = (distanceFromUser / 1000).rounded()
+        
+        
         
     }
     class func sortByDistance(shops: [Shop])  -> [Shop] {
         
         //let sortedShopDistance = shopDistances.sorted(by: { $0 < $1 })
-        let sortedShopDistance = shops.sorted(by: { $0.distance < $1.distance })
+        let sortedShops = shops.sorted(by: { $0.distance < $1.distance })
         //print(sortedShopDistance)
-        return sortedShopDistance
+        return sortedShops
     }
     
     

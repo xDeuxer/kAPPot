@@ -51,6 +51,8 @@ class ShopCollectionViewCell: UICollectionViewCell {
         let rating = selectedShop.getRating()
         shopRating.text="\(rating)"
         
+        shopDistance.text = "\(selectedShop.distance)"
+        
     }
     
     @IBAction func getDirectionsButton(_ sender: Any) {

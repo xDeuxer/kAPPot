@@ -31,7 +31,7 @@ class userCartVC: UIViewController {
         totalPrice = 0
         userCart = User.loggedInUser.cart
         userCart.items.forEach { (cartItem) in
-            totalPrice += cartItem.getPrice()
+            totalPrice += cartItem.getPrice()*cartItem.getQuantity()
         }
         cartPrice.text = "\(totalPrice)"
         cartCollectionView.reloadData()
@@ -60,9 +60,10 @@ extension userCartVC : UICollectionViewDelegate , UICollectionViewDataSource {
 }
 extension userCartVC : CartItemCellDelegate
 {
-    func UpdateCartPrice(price: Int) {
+    func UpdateCart(price: Int , itemQuantity : Int , cellindex : Int) {
         totalPrice += price
-        
+        User.loggedInUser.cart.items[cellindex].quantity = itemQuantity
+        User.loggedInUser.cart.updateUserCart()
         cartPrice.text = "\(totalPrice)"
     }
     

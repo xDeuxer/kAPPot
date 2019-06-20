@@ -12,14 +12,12 @@ class Cart {
     var items = [item]()
     
     //private let dbRef = Firestore.firestore()
-    func addToUserCart(sparePart : SparePart) {
-       let spareItem = item(spareName : sparePart.getName() , img_url : sparePart.getImgUrl() , price : sparePart.getPrice())
-        if(self.items.contains(spareItem)) { return }
-        self.items.append(spareItem)
-        dump(spareItem)
+    func updateUserCart() {
+       
         self.deleteCart()
         Firestore.firestore().collection("Cart").document("\(User.loggedInUser.getUserEmail())").setData(["spares" : ""])
         items.forEach { (item) in
+            print(item.getName())
             let spareDictionary = ["name" : item.getName() , "price" : item.getPrice() , "img_url" : item.getImgUrl() , "quantity" : item.getQuantity()] as [String : Any]
             Firestore.firestore().collection("Cart").document("\(User.loggedInUser.getUserEmail())").updateData([
                 "spares": FieldValue.arrayUnion([spareDictionary])

@@ -8,7 +8,7 @@
 
 import UIKit
 protocol  CartItemCellDelegate {
-    func UpdateCartPrice(price : Int )
+    func UpdateCart(price : Int , itemQuantity : Int ,  cellindex : Int)
     func Removeitem(sparePart : item)
 }
 
@@ -37,8 +37,8 @@ class CartItemCollectionViewCell: UICollectionViewCell {
         productImage.image = UIImage(data: data!)
         
         productName.text = spare.getName()
-        productPrice.text = "\(spare.getPrice())"
-        productQuantity.text = "1"
+        productPrice.text = "\(spare.getPrice()) EGP" 
+        productQuantity.text = "\(spare.getQuantity())"
         
     }
    
@@ -49,7 +49,7 @@ class CartItemCollectionViewCell: UICollectionViewCell {
         {
             print("quanity increased")
             quantityOrdered += 1
-            delegate?.UpdateCartPrice(price: Int(cartItem.getPrice()))
+            delegate?.UpdateCart(price: Int(cartItem.getPrice()), itemQuantity: quantityOrdered , cellindex: cellindex)
             
         }else{
             if(quantityOrdered == 1)
@@ -61,7 +61,7 @@ class CartItemCollectionViewCell: UICollectionViewCell {
 
             quantityOrdered -= 1
             
-            delegate?.UpdateCartPrice(price: Int(-cartItem.getPrice()))
+            delegate?.UpdateCart(price: Int(-cartItem.getPrice()),itemQuantity: quantityOrdered , cellindex: cellindex)
         }
         print(quantityOrdered)
         productQuantity.text = "\(quantityOrdered)"

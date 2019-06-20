@@ -15,6 +15,8 @@ class CarSelectionVC: UIViewController {
     var carType :String = ""
     var repairType :String = ""
     
+    @IBOutlet weak var selectedCar: UIImageView!
+    
     var ShopReference : Shop = Shop()
     var Shops = [Shop]()
     let carLogos = ["Kia","Mercedes","Hyundai","Nissan","Chevrolet","Honda","Jeep","Proton" , "BMW"]
@@ -23,15 +25,21 @@ class CarSelectionVC: UIViewController {
     @IBOutlet weak var RepairTypes: UIStackView!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         //////////////////////
         navigationController?.customNavBar()
 
-        self.ServiceButtons.isHidden=true
-        self.RepairTypes.isHidden=true
-
-       
         // Do any additional setup after loading the view.
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        selectedCar.image = UIImage(named : User.loggedInUser.car.getCarModel())
+        if(User.loggedInUser.car.getCarModel() != ""){
+            ServiceButtons.isHidden = false
+            
+        }else{
+            print("has no car")
+        }
     }
     
    
@@ -131,9 +139,10 @@ extension CarSelectionVC : carCellDelegate , UICollectionViewDelegate , UICollec
     
     func LogoTapped(name : String)
     {
-        carType=name
+        
         User.loggedInUser.setUserCar(carModel: name)
-        print(name)
+       
+        selectedCar.image = UIImage(named : User.loggedInUser.car.getCarModel())
         self.ServiceButtons.isHidden=false
         
     }

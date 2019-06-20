@@ -89,8 +89,10 @@ extension OnlineShopVC : UICollectionViewDelegate , UICollectionViewDataSource
 extension OnlineShopVC : sparePartCellDelegate
 {
     func addSpareToCart(sparePart : SparePart) {
-        // 
-        User.loggedInUser.cart.addToUserCart(sparePart: sparePart)
+        //
+        let spareItem = item(spareName : sparePart.getName() , img_url : sparePart.getImgUrl() , price : sparePart.getPrice())
+        if(!User.loggedInUser.cart.items.contains(spareItem)) { User.loggedInUser.cart.items.append(spareItem) }
+        User.loggedInUser.cart.updateUserCart()
     }
     
     

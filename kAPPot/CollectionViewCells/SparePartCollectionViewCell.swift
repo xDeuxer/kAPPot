@@ -30,7 +30,7 @@ class SparePartCollectionViewCell: UICollectionViewCell {
         let data = try? Data(contentsOf: url!)
         Image.image = UIImage(data: data!)
         Name.text = sparepart.getName()
-        Price.text = "\(sparepart.getPrice())"
+        Price.text = "\(sparepart.getPrice()) EGP"
         self.cellindex = cellindex
     }
     @IBAction func addSpareToCart(_ sender: UIButton) {

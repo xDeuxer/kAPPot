@@ -7,6 +7,7 @@
 //
 
 import FirebaseFirestore
+import CoreLocation
 
 class RepairShop: Shop {
     private var failureType:[String] = []
@@ -46,11 +47,23 @@ class RepairShop: Shop {
                     let arr = car.data()
                     guard let carShops = arr["Shops"] as? [[String : Any]] else{ return }
                     carShops.forEach({ (shop) in
-                
-                        let failureTypes = RepairShop.convertToRepairShop(JsonObject: shop).getFailureType()
+                        let retrievedShop = RepairShop.convertToRepairShop(JsonObject: shop)
+                        let failureTypes = retrievedShop.getFailureType()
                         if(failureTypes.contains("\(self.selectedFailureType)"))
                         {
-                            temp.append(RepairShop.convertToRepairShop(JsonObject: shop))
+                            User.getUserLocation(completion: { (res) in
+                                switch res
+                                {
+                                    
+                                case .success(let userlocation):
+                                    retrievedShop.setDistanceFromUser(userLocation: userlocation, shopLocation: CLLocationCoordinate2DMake(retrievedShop.getLocations()[0]["lat"]!, retrievedShop.getLocations()[0]["long"]!))
+                                    temp.append(retrievedShop)
+                                case .failure(let error):
+                                    print(error)
+                                }
+                            })
+                            
+                            
                         }
                     })
                     

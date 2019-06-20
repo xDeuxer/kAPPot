@@ -11,6 +11,7 @@
 		280AE06522B49F6600649FAA /* CartItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280AE06422B49F6600649FAA /* CartItemCollectionViewCell.swift */; };
 		280AE06B22B4A37400649FAA /* userCartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280AE06A22B4A37400649FAA /* userCartVC.swift */; };
 		280C88F522BACD9800BF02A3 /* AdminControlPanelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280C88F422BACD9800BF02A3 /* AdminControlPanelVC.swift */; };
+		280C88FB22BB2A3A00BF02A3 /* Kappot.png in Resources */ = {isa = PBXBuildFile; fileRef = 280C88FA22BB2A3A00BF02A3 /* Kappot.png */; };
 		280DF25322B5CFBC00CBA174 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280DF25222B5CFBC00CBA174 /* Order.swift */; };
 		280DF25522B5E8C900CBA174 /* item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280DF25422B5E8C900CBA174 /* item.swift */; };
 		281073B022B1EE7000E48262 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281073AF22B1EE7000E48262 /* CollectionViewCell.swift */; };
@@ -66,6 +67,7 @@
 		280AE06422B49F6600649FAA /* CartItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		280AE06A22B4A37400649FAA /* userCartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userCartVC.swift; sourceTree = "<group>"; };
 		280C88F422BACD9800BF02A3 /* AdminControlPanelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminControlPanelVC.swift; sourceTree = "<group>"; };
+		280C88FA22BB2A3A00BF02A3 /* Kappot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Kappot.png; path = "../../../Downloads/Collection 4/Kappot.png"; sourceTree = "<group>"; };
 		280DF25222B5CFBC00CBA174 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		280DF25422B5E8C900CBA174 /* item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = item.swift; sourceTree = "<group>"; };
 		281073AF22B1EE7000E48262 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				434CD9B6225EDCC50098BC1B /* Supported Files */,
 				434CD9B9225F217E0098BC1B /* GoogleService-Info.plist */,
 				434CD98F225EC0890098BC1B /* Info.plist */,
+				280C88FA22BB2A3A00BF02A3 /* Kappot.png */,
 			);
 			path = kAPPot;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 			files = (
 				434CD98E225EC0890098BC1B /* LaunchScreen.storyboard in Resources */,
 				434CD9BA225F217E0098BC1B /* GoogleService-Info.plist in Resources */,
+				280C88FB22BB2A3A00BF02A3 /* Kappot.png in Resources */,
 				434CD98B225EC0890098BC1B /* Assets.xcassets in Resources */,
 				434CD989225EC03B0098BC1B /* Main.storyboard in Resources */,
 			);
