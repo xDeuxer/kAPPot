@@ -20,7 +20,7 @@ class Car {
     }
     func getAllCarSpares(completion: @escaping (Result<[SparePart],Error>) -> ())
     {
-        //var temp : [SparePart] = []
+        CarSpares.removeAll()
         let basicQuery = Firestore.firestore().collection("car_spares")
         basicQuery.addSnapshotListener { (snapshot, error) in
             if let error = error {
@@ -35,6 +35,7 @@ class Car {
                     guard let spareParts = arr["spares"] as? [[String : Any]] else{ return }
                     spareParts.forEach({ (carSpare) in
                         let temp = SparePart(spareName: carSpare["name"] as! String, img_url: carSpare["img_url"] as! String, price: carSpare["price"] as! Int)
+                        
                         self.CarSpares.append(temp)
                     })
                 }

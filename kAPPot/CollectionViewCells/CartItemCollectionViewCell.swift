@@ -14,6 +14,7 @@ protocol  CartItemCellDelegate {
 
 class CartItemCollectionViewCell: UICollectionViewCell {
     
+    var cellindex : Int = 5 // default value
     var cartItem = item()
     var quantityOrdered : Int  = 1
     
@@ -27,10 +28,14 @@ class CartItemCollectionViewCell: UICollectionViewCell {
     
     var delegate : CartItemCellDelegate?
     
-    func setCartItem(spare :item)
+    func setCartItem(spare :item , cellindex : Int)
     {
+        self.cellindex = cellindex
         cartItem = spare
-        productImage.image = UIImage()
+        let url = URL(string: spare.getImgUrl())
+        let data = try? Data(contentsOf: url!)
+        productImage.image = UIImage(data: data!)
+        
         productName.text = spare.getName()
         productPrice.text = "\(spare.getPrice())"
         productQuantity.text = "1"
@@ -38,19 +43,27 @@ class CartItemCollectionViewCell: UICollectionViewCell {
     }
    
     @IBAction func UpdateQuantity(_ sender: UIButton) {
+       // print("quanity increased")
+
         if(sender.tag == 1)
         {
+            print("quanity increased")
             quantityOrdered += 1
             delegate?.UpdateCartPrice(price: Int(cartItem.getPrice()))
             
         }else{
             if(quantityOrdered == 1)
             {
+                
                 return
             }
+            print("quanity decreased")
+
             quantityOrdered -= 1
+            
             delegate?.UpdateCartPrice(price: Int(-cartItem.getPrice()))
         }
+        print(quantityOrdered)
         productQuantity.text = "\(quantityOrdered)"
     }
 }

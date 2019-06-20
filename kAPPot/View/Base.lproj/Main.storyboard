@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7kZ-yR-G2q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M1p-pN-JkY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -180,7 +180,8 @@
         <!--Admin Page-->
         <scene sceneID="DAD-bZ-IHm">
             <objects>
-                <viewController title="Admin Page" id="Vdc-uq-Rgf" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fVE-MS-q5H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController title="Admin Page" id="Vdc-uq-Rgf" customClass="AdminControlPanelVC" customModule="kAPPot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cBd-dV-4Ll">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -207,14 +208,17 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="7kZ-yR-G2q" kind="show" id="zGL-hr-xws"/>
+                                            <segue destination="7kZ-yR-G2q" kind="show" id="r24-Cn-fLC"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Admin Control Panel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TdN-8t-wjw">
-                                <rect key="frame" x="10" y="64" width="355" height="78"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Admin Control Panel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TdN-8t-wjw">
+                                <rect key="frame" x="10" y="20" width="355" height="78"/>
                                 <color key="backgroundColor" red="0.64356806509999998" green="0.19215686269999999" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="78" id="PPJ-re-9gS"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -223,6 +227,7 @@
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="TdN-8t-wjw" firstAttribute="leading" secondItem="9CL-BU-7rk" secondAttribute="leading" constant="10" id="93O-5r-ZLt"/>
+                            <constraint firstItem="TdN-8t-wjw" firstAttribute="top" secondItem="9CL-BU-7rk" secondAttribute="top" id="NmJ-yD-zOF"/>
                             <constraint firstItem="Hj9-BA-Lrt" firstAttribute="centerY" secondItem="cBd-dV-4Ll" secondAttribute="centerY" id="NxG-Tf-OSi"/>
                             <constraint firstAttribute="bottom" secondItem="Hj9-BA-Lrt" secondAttribute="bottom" constant="200" id="Omd-LD-GDm"/>
                             <constraint firstItem="Hj9-BA-Lrt" firstAttribute="centerX" secondItem="cBd-dV-4Ll" secondAttribute="centerX" id="V9S-If-Nsn"/>
@@ -235,7 +240,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="K2K-bp-YU7"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fVE-MS-q5H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5012" y="1800"/>
         </scene>
@@ -398,17 +402,17 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="aiP-T6-Tqv">
-                                <rect key="frame" x="5" y="624" width="365" height="30"/>
+                                <rect key="frame" x="5" y="580" width="365" height="74"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TMb-yb-MAh" customClass="customButton" customModule="kAPPot" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="157.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="157.5" height="74"/>
                                         <color key="backgroundColor" red="1" green="0.4941176471" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Add Shops">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qI-ze-VBg" customClass="customButton" customModule="kAPPot" customModuleProvider="target">
-                                        <rect key="frame" x="207.5" y="0.0" width="157.5" height="30"/>
+                                        <rect key="frame" x="207.5" y="0.0" width="157.5" height="74"/>
                                         <color key="backgroundColor" red="1" green="0.4941176471" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Delete/Update Shops">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -445,7 +449,7 @@
         <!--Adding Shops-->
         <scene sceneID="agL-WV-b3Y">
             <objects>
-                <viewController title="Adding Shops" id="3KG-4d-20G" sceneMemberID="viewController">
+                <viewController title="Adding Shops" id="3KG-4d-20G" customClass="AdminControlPanelVC" customModule="kAPPot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LPW-2C-g0K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1430,7 +1434,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="lfQ-K6-tgL">
                                                     <rect key="frame" x="290" y="12" width="60" height="98.5"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TMg-Q0-xN4" userLabel="Plus">
+                                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TMg-Q0-xN4" userLabel="Plus">
                                                             <rect key="frame" x="0.0" y="0.0" width="60" height="24"/>
                                                             <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                             <state key="normal" title="Button" image="plus-1"/>
@@ -1497,7 +1501,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1500000 EGP" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4CQ-8c-IQY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0 EGP" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4CQ-8c-IQY">
                                 <rect key="frame" x="205" y="78" width="130" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
@@ -1525,6 +1529,7 @@
                     <tabBarItem key="tabBarItem" title="Cart" image="Cart" id="hxP-AO-yTT"/>
                     <connections>
                         <outlet property="cart" destination="35m-mN-Szu" id="HPU-WR-j9k"/>
+                        <outlet property="cartCollectionView" destination="35m-mN-Szu" id="M6h-bI-gSc"/>
                         <outlet property="cartPrice" destination="4CQ-8c-IQY" id="0kC-YS-XEL"/>
                         <outlet property="checkOut" destination="2I1-Jm-Zjo" id="AKw-6U-Sm2"/>
                     </connections>
@@ -1544,7 +1549,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Vdc-uq-Rgf" kind="relationship" relationship="rootViewController" id="t42-Kn-rSs"/>
+                        <segue destination="Vdc-uq-Rgf" kind="showDetail" id="geT-tY-bQg"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W0z-d0-1Jw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1554,7 +1559,7 @@
         <!--Update/Delete Shops-->
         <scene sceneID="vPd-eO-hRY">
             <objects>
-                <viewController storyboardIdentifier="Update/Delete Shops" title="Update/Delete Shops" id="9jd-1z-lT0" userLabel="Update/Delete Shops" sceneMemberID="viewController">
+                <viewController title="Update/Delete Shops" id="9jd-1z-lT0" userLabel="Update/Delete Shops" customClass="AdminControlPanelVC" customModule="kAPPot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JUb-GK-YaS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1596,6 +1601,7 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
+                                                        <action selector="UpdateShop:" destination="vhD-eK-0kJ" eventType="touchUpInside" id="uws-KH-Qz2"/>
                                                         <action selector="getDirectionsButton:" destination="vhD-eK-0kJ" eventType="touchUpInside" id="456-fe-82j"/>
                                                     </connections>
                                                 </button>
@@ -1625,6 +1631,7 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
+                                                        <action selector="DeleteShop:" destination="vhD-eK-0kJ" eventType="touchUpInside" id="rsI-jS-c2P"/>
                                                         <action selector="shopOnlineButton:" destination="vhD-eK-0kJ" eventType="touchUpInside" id="o2t-hs-5JQ"/>
                                                     </connections>
                                                 </button>
@@ -1726,6 +1733,10 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="9jd-1z-lT0" id="jAw-k7-0C1"/>
+                                    <outlet property="delegate" destination="9jd-1z-lT0" id="hyC-uI-4ar"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1766,7 +1777,7 @@
         <image name="plus-1" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="j83-dO-Et9"/>
+        <segue reference="k7T-kt-kBe"/>
         <segue reference="PXa-TT-6cq"/>
     </inferredMetricsTieBreakers>
 </document>

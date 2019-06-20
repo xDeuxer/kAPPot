@@ -9,22 +9,19 @@ import FirebaseFirestore
 
 class Cart {
     
-    var userid : String = "any id"
     var items = [item]()
     
     //private let dbRef = Firestore.firestore()
-    func addToUserCart() {
-        let item1 = item.createItem(spareName: "item1", img_url: "url1", price: 22, quantity: 11)
-        let item2 = item.createItem(spareName: "item2", img_url: "url2", price: 23, quantity: 4)
-        let item3 = item.createItem(spareName: "item3", img_url: "url3", price: 22, quantity: 1)
-        items.append(item1)
-        items.append(item2)
-        items.append(item3)
+    func addToUserCart(sparePart : SparePart) {
+       let spareItem = item(spareName : sparePart.getName() , img_url : sparePart.getImgUrl() , price : sparePart.getPrice())
+        if(self.items.contains(spareItem)) { return }
+        self.items.append(spareItem)
+        dump(spareItem)
         self.deleteCart()
-        Firestore.firestore().collection("Cart").document("\(self.userid)").setData(["spares" : ""])
+        Firestore.firestore().collection("Cart").document("\(User.loggedInUser.getUserEmail())").setData(["spares" : ""])
         items.forEach { (item) in
             let spareDictionary = ["name" : item.getName() , "price" : item.getPrice() , "img_url" : item.getImgUrl() , "quantity" : item.getQuantity()] as [String : Any]
-            Firestore.firestore().collection("Cart").document("\(self.userid)").updateData([
+            Firestore.firestore().collection("Cart").document("\(User.loggedInUser.getUserEmail())").updateData([
                 "spares": FieldValue.arrayUnion([spareDictionary])
                 ])
         }
@@ -32,7 +29,7 @@ class Cart {
     }
     func deleteCart()
     {
-        Firestore.firestore().collection("Cart").document("\(self.userid)").delete()
+        Firestore.firestore().collection("Cart").document("\(User.loggedInUser.getUserEmail())").delete()
     }
     
 }

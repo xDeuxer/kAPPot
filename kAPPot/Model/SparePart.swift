@@ -13,6 +13,7 @@ class SparePart {
     var img_url : String = ""
     var price : Int = 0
     
+    
     init() {
         
     }

@@ -129,6 +129,14 @@ extension ShopsVC: UICollectionViewDataSource , UICollectionViewDelegate
 
 extension ShopsVC : ShopCellDelegate
 {
+    func UpdateShop(shop: Shop) {
+        //
+    }
+    
+    func DeleteShop(shop: Shop) {
+        //
+    }
+    
 
     func getDirections(shop : Shop) {
         self.selectdShop = shop
@@ -153,6 +161,7 @@ extension ShopsVC : ShopCellDelegate
             vc.selectedShop = self.selectdShop
         }else{
             let vc = segue.destination as! OnlineShopVC
+            print(carSpares.count)
             vc.selectedOnlineShop=self.selectdShop
             vc.shopSpareParts = self.carSpares
             

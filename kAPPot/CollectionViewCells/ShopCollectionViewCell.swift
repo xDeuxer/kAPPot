@@ -14,6 +14,10 @@ protocol ShopCellDelegate {
     
     func shopOnline(shop : Shop)
     
+    func UpdateShop(shop : Shop)
+    
+    func DeleteShop(shop : Shop)
+    
 }
 
 class ShopCollectionViewCell: UICollectionViewCell {
@@ -57,4 +61,10 @@ class ShopCollectionViewCell: UICollectionViewCell {
         delegate?.shopOnline(shop : selectedShop)
     }
     
+    @IBAction func UpdateShop(_ sender: Any) {
+        
+    }
+    
+    @IBAction func DeleteShop(_ sender: Any) {
+    }
 }

@@ -35,3 +35,24 @@ class AdminControlPanelVC: UIViewController {
     
 
 }
+
+extension AdminControlPanelVC : ShopCellDelegate
+{
+    func getDirections(shop: Shop) {
+    
+    }
+    
+    func shopOnline(shop: Shop) {
+        
+    }
+    
+    func UpdateShop(shop: Shop) {
+        
+    }
+    
+    func DeleteShop(shop: Shop) {
+        
+    }
+    
+    
+}

@@ -16,16 +16,26 @@ class userCartVC: UIViewController {
     var totalPrice : Int = 0    
     var userCart : Cart = Cart()
     
+    @IBOutlet weak var cartCollectionView: UICollectionView!
+    
     @IBOutlet weak var checkOut: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkOut.isHidden = true
-        if(userCart != nil)
-        {
-            checkOut.isHidden = false
-        }
+        
+        checkOut.isHidden = false
+       
         // Do any additional setup after loading the view.
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        totalPrice = 0
+        userCart = User.loggedInUser.cart
+        userCart.items.forEach { (cartItem) in
+            totalPrice += cartItem.getPrice()
+        }
+        cartPrice.text = "\(totalPrice)"
+        cartCollectionView.reloadData()
+        print("appeared")
     }
     
 
@@ -42,7 +52,7 @@ extension userCartVC : UICollectionViewDelegate , UICollectionViewDataSource {
         
         cell.delegate = self
         
-        cell.setCartItem(spare: (userCart.items[indexPath.row]))
+        cell.setCartItem(spare: (userCart.items[indexPath.row]) , cellindex:  indexPath.row)
         
         return cell
     }

@@ -13,6 +13,7 @@ protocol sparePartCellDelegate {
 }
 class SparePartCollectionViewCell: UICollectionViewCell {
     
+    var cellindex : Int = 5
     var currentSparePart = SparePart()
     @IBOutlet weak var Image: UIImageView!
     
@@ -22,13 +23,18 @@ class SparePartCollectionViewCell: UICollectionViewCell {
     
     var delegate : sparePartCellDelegate?
     
-    func setSparePart(sparepart : SparePart)
+    func setSparePart(sparepart : SparePart , cellindex : Int)
     {
-        //sparePartImage = sparepart.getImgUrl()
+        currentSparePart = sparepart
+        let url = URL(string: sparepart.getImgUrl())
+        let data = try? Data(contentsOf: url!)
+        Image.image = UIImage(data: data!)
         Name.text = sparepart.getName()
         Price.text = "\(sparepart.getPrice())"
+        self.cellindex = cellindex
     }
     @IBAction func addSpareToCart(_ sender: UIButton) {
+        print(cellindex)
         delegate?.addSpareToCart(sparePart: currentSparePart)
     }
 }

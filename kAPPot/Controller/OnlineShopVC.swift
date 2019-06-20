@@ -58,7 +58,7 @@ extension OnlineShopVC : UICollectionViewDelegate , UICollectionViewDataSource
         
         
         
-        cell.setSparePart(sparepart: shopSpareParts[indexPath.row])
+        cell.setSparePart(sparepart: shopSpareParts[indexPath.row] , cellindex: indexPath.row)
         
         cell.delegate=self
         
@@ -90,7 +90,7 @@ extension OnlineShopVC : sparePartCellDelegate
 {
     func addSpareToCart(sparePart : SparePart) {
         // 
-        
+        User.loggedInUser.cart.addToUserCart(sparePart: sparePart)
     }
     
     

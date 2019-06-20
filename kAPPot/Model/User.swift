@@ -85,6 +85,10 @@ class User: NSObject , CLLocationManagerDelegate{
         
     }
     
+    func getUserEmail() -> String {
+        return self.email
+    }
+    
     class func getUserLocation(completion: @escaping (Result<CLLocationCoordinate2D,Error>) -> ())
     {
         var defaultLoc = CLLocationCoordinate2DMake(29.964046,30.948015)//(30.031218, 31.21052)
