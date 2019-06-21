@@ -10,6 +10,12 @@ import UIKit
 
 class AdminControlPanelVC: UIViewController {
 
+    
+    
+    @IBOutlet weak var shopTypesHandle: UIButton!
+    
+    @IBOutlet weak var dropDownShop: UIButton!
+    
     var selectedCars = ["","","","","","","","",""]
     override func viewDidLoad() {
         super.viewDidLoad()

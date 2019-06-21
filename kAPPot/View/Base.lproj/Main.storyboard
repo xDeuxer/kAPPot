@@ -402,26 +402,113 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="aiP-T6-Tqv">
-                                <rect key="frame" x="5" y="580" width="365" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="aiP-T6-Tqv">
+                                <rect key="frame" x="26" y="64" width="365" height="74"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TMb-yb-MAh" customClass="customButton" customModule="kAPPot" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="157.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="157.5" height="74"/>
                                         <color key="backgroundColor" red="1" green="0.4941176471" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Add Shops">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qI-ze-VBg" customClass="customButton" customModule="kAPPot" customModuleProvider="target">
-                                        <rect key="frame" x="207.5" y="0.0" width="157.5" height="30"/>
+                                        <rect key="frame" x="207.5" y="0.0" width="157.5" height="74"/>
                                         <color key="backgroundColor" red="1" green="0.4941176471" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Delete/Update Shops">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
                                 </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1dm-Kl-qrk">
+                                <rect key="frame" x="270" y="594" width="100" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CmJ-Lu-n8Z" userLabel="Add">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                        <color key="backgroundColor" red="0.20392156859999999" green="0.19215686269999999" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="1mP-Am-mU0"/>
+                                        </constraints>
+                                        <state key="normal" title="Add">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dropDownHandle:" destination="jN4-tj-6Fy" eventType="touchUpInside" id="Ipy-Nl-2GH"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Gj-V4-MyM" userLabel="Update/Delete">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.4941176471" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="nWs-SB-zks"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="t0b-jZ-y25"/>
+                                        </constraints>
+                                        <state key="normal" title="Update/Delete">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sortOptionChanged:" destination="jN4-tj-6Fy" eventType="touchUpInside" id="4bi-jq-hFo"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="hLH-Sf-ZjP"/>
+                                    <constraint firstAttribute="trailing" secondItem="CmJ-Lu-n8Z" secondAttribute="trailing" id="0gZ-pn-fFh"/>
+                                    <constraint firstItem="CmJ-Lu-n8Z" firstAttribute="leading" secondItem="1dm-Kl-qrk" secondAttribute="leading" id="5wf-at-9Mi"/>
+                                    <constraint firstItem="CmJ-Lu-n8Z" firstAttribute="top" secondItem="1dm-Kl-qrk" secondAttribute="top" id="daW-pg-NGb"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5N-N7-VoJ">
+                                <rect key="frame" x="5" y="594" width="51" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Operation" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujm-41-rPd">
+                                <rect key="frame" x="175" y="594" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FjS-hy-tdE">
+                                <rect key="frame" x="145" y="637" width="103" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.4941176471" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Apply">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1f9-aJ-uxY" userLabel="Shop Types">
+                                <rect key="frame" x="50" y="594" width="100" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHg-kz-gr5">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                        <color key="backgroundColor" red="0.20392156859999999" green="0.19215686269999999" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="S0e-Bx-xso"/>
+                                        </constraints>
+                                        <state key="normal" title="Repair">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PsP-2B-uJ5">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.4941176471" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="cdD-7b-nVG"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="mMf-6c-7uz"/>
+                                        </constraints>
+                                        <state key="normal" title="Spare">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="JHg-kz-gr5" firstAttribute="top" secondItem="1f9-aJ-uxY" secondAttribute="top" id="94S-cp-iQu"/>
+                                    <constraint firstAttribute="trailing" secondItem="JHg-kz-gr5" secondAttribute="trailing" id="WE2-8I-RcC"/>
+                                    <constraint firstItem="JHg-kz-gr5" firstAttribute="leading" secondItem="1f9-aJ-uxY" secondAttribute="leading" id="hFX-Zj-BLw"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -442,6 +529,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xwg-Gu-ZQX"/>
                     </view>
+                    <connections>
+                        <outlet property="dropDownShop" destination="PsP-2B-uJ5" id="ODs-rb-HK4"/>
+                        <outlet property="shopTypesHandle" destination="JHg-kz-gr5" id="FjR-Bm-J6I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xs5-zo-Dux" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
