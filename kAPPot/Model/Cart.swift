@@ -18,7 +18,7 @@ class Cart {
         Firestore.firestore().collection("Cart").document("\(User.loggedInUser.getUserEmail())").setData(["spares" : ""])
         items.forEach { (item) in
             print(item.getName())
-            let spareDictionary = ["name" : item.getName() , "price" : item.getPrice() , "img_url" : item.getImgUrl() , "quantity" : item.getQuantity()] as [String : Any]
+            let spareDictionary = ["name" : item.getName() , "price" : item.getPrice() , "img_url" : item.getImgUrl() , "quantity" : item.getQuantity() , "seller" : item.getSeller() , "carItem" : item.getCarItem()] as [String : Any]
             Firestore.firestore().collection("Cart").document("\(User.loggedInUser.getUserEmail())").updateData([
                 "spares": FieldValue.arrayUnion([spareDictionary])
                 ])

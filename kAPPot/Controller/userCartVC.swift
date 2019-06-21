@@ -38,7 +38,14 @@ class userCartVC: UIViewController {
         print("appeared")
     }
     
-
+    
+    @IBAction func placeOrder(_ sender: UIButton) {
+        User.loggedInUser.order.createOrder()
+        User.loggedInUser.cart.items.removeAll()
+        User.loggedInUser.cart.updateUserCart()
+        cart.reloadData()
+    }
+    
 
 }
 extension userCartVC : UICollectionViewDelegate , UICollectionViewDataSource {
@@ -67,8 +74,10 @@ extension userCartVC : CartItemCellDelegate
         cartPrice.text = "\(totalPrice)"
     }
     
-    func Removeitem(sparePart: item) {
+    func Removeitem(itemIndex : Int) {
         // remove sparepart
+        User.loggedInUser.cart.items.remove(at: itemIndex)
+        User.loggedInUser.cart.updateUserCart()
         cart.reloadData()
     }
     

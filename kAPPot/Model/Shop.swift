@@ -75,17 +75,8 @@ class Shop{
                     carShops.forEach({ (shop) in
               
                        let retrievedShop = Shop.convertToShop(JsonObject: shop)
-                        User.getUserLocation(completion: { (res) in
-                            switch res
-                            {
-                                
-                            case .success(let userlocation):
-                                retrievedShop.setDistanceFromUser(userLocation: userlocation, shopLocation: CLLocationCoordinate2DMake(retrievedShop.getLocations()[0]["lat"]!, retrievedShop.getLocations()[0]["long"]!))
-                                    temp.append(retrievedShop)
-                            case .failure(let error):
-                                print(error)
-                            }
-                        })
+                        retrievedShop.setDistanceFromUser(userLocation: User.getUserLocation(), shopLocation: CLLocationCoordinate2DMake(retrievedShop.getLocations()[0]["lat"]!, retrievedShop.getLocations()[0]["long"]!))
+                        temp.append(retrievedShop)
                         
                     })
                 }

@@ -45,22 +45,8 @@ class MapVC: UIViewController , MKMapViewDelegate ,CLLocationManagerDelegate{
         
     }
     func loadUserLocation(completion : @escaping () -> ()) {
-        User.getUserLocation { (res) in
-            switch res
-            {
-                
-            case .success(let location):
-                self.userLocation = location
-                //self.userLocation = CLLocationCoordinate2DMake(30.031218, 31.21052)
-                print(self.userLocation)
-                self.map.showsUserLocation = true
-                self.moveCameraToUserLocation()
-                completion()
-            case .failure(let error):
-                print(error)
-                completion()
-            }
-        }
+        self.userLocation = User.getUserLocation()
+        completion()
         
     }
     func createMarker(titleMarker: String,ShopLocation: [String : Double],subtitle: String) {
@@ -73,6 +59,37 @@ class MapVC: UIViewController , MKMapViewDelegate ,CLLocationManagerDelegate{
             map.addAnnotation(annotation)
         
         
+    }
+    class func convertLatLongToAddress(latitude:Double, longitude:Double , completion: @escaping (Result<String,Error>) -> ()){
+        
+        let geoCoder = CLGeocoder()
+        let location = CLLocation(latitude: latitude, longitude: longitude)
+        var address : String = ""
+        geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
+                
+        // Place details
+        var placeMark: CLPlacemark!
+        placeMark = placemarks?[0]
+            
+        if placeMark.subLocality != nil {
+            address = address + placeMark.subLocality! + ", "
+        }
+        if placeMark.thoroughfare != nil {
+            address = address + placeMark.thoroughfare! + ", "
+        }
+        if placeMark.locality != nil {
+            address = address + placeMark.locality! + ", "
+        }
+        if placeMark.country != nil {
+            address = address + placeMark.country! + ", "
+        }
+        if placeMark.postalCode != nil {
+            address = address + placeMark.postalCode! + " "
+        }
+                
+        completion(.success(address))
+       
+        })
     }
     
     func drawPath(userLocation: CLLocationCoordinate2D, destination: CLLocationCoordinate2D )

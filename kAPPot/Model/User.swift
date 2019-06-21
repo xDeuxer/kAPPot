@@ -19,6 +19,7 @@ class User: NSObject , CLLocationManagerDelegate{
     var password : String = ""
     var car = Car()
     var cart = Cart()
+    var order = Order()
     
     override init() {
         
@@ -63,16 +64,19 @@ class User: NSObject , CLLocationManagerDelegate{
                         if let document = document, document.exists {
                             let dataDescription = document.data()
                             guard let docData = dataDescription!["spares"] as? [[String : Any]] else { return }
-                            docData.forEach({ (spareItem) in
-                                user.cart.items.append(item.createItem(spareName: spareItem["name"] as! String, img_url: spareItem["img_url"] as! String, price: spareItem["price"] as! Int, quantity: spareItem["quantity"] as! Int))
-                            })
+                            if(!docData.isEmpty){
+                                docData.forEach({ (retrievedSpareItem) in
+                                    let spareItem = item.createItem(spareName: retrievedSpareItem["name"] as! String, img_url: retrievedSpareItem["img_url"] as! String, price: retrievedSpareItem["price"] as! Int, quantity: retrievedSpareItem["quantity"] as! Int, carItem: retrievedSpareItem["carItem"] as! String, seller: retrievedSpareItem["seller"] as! String)
+                                    user.cart.items.append(spareItem)
+                                })
+                            }
                             
                             
                             completion(.success(user))
                             // print("Document data: \(dataDescription)")
                             //   dump(user)
                         } else {
-                            completion(.failure(error!))
+                            //completion(.failure(error!))
                             print("Document does not exist")
                         }
                         
@@ -111,7 +115,7 @@ class User: NSObject , CLLocationManagerDelegate{
         return self.email
     }
     
-    class func getUserLocation(completion: @escaping (Result<CLLocationCoordinate2D,Error>) -> ())
+    class func getUserLocation() ->CLLocationCoordinate2D
     {
         var defaultLoc = CLLocationCoordinate2DMake(29.964046,30.948015)//(30.031218, 31.21052)
         let locationManager = CLLocationManager()
@@ -143,18 +147,19 @@ class User: NSObject , CLLocationManagerDelegate{
             //userLocation = myloc
             if locations[locations.count - 1].horizontalAccuracy > 0{
                 locationManager.stopUpdatingLocation()
-                completion(.success(defaultLoc))
+                
                 
                 //  createMarker(titleMarker: "me", iconMarker: UIImage(named : "MapCar")!, snippet: "cairo uni", latitude: myloc.latitude, longitude: myloc.longitude)
                 
             }
         }
         func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-            completion(.failure(error))
+            
         }
         func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
             checkForLocationService()
         }
-        completion(.success(defaultLoc))
+        return defaultLoc
     }
+    
 }

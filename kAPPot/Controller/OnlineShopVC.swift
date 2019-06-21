@@ -91,8 +91,12 @@ extension OnlineShopVC : sparePartCellDelegate
     func addSpareToCart(sparePart : SparePart) {
         //
         let spareItem = item(spareName : sparePart.getName() , img_url : sparePart.getImgUrl() , price : sparePart.getPrice())
-        if(!User.loggedInUser.cart.items.contains(spareItem)) { User.loggedInUser.cart.items.append(spareItem) }
-        User.loggedInUser.cart.updateUserCart()
+        spareItem.setCarItem(carItem: User.loggedInUser.car.getCarModel())
+        spareItem.setSeller(seller: self.selectedOnlineShop.getShopName())
+        if(!User.loggedInUser.cart.items.contains(spareItem)) {
+            User.loggedInUser.cart.items.append(spareItem)
+            User.loggedInUser.cart.updateUserCart()
+        }
     }
     
     

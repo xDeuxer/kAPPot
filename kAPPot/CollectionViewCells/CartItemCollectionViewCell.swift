@@ -9,7 +9,7 @@
 import UIKit
 protocol  CartItemCellDelegate {
     func UpdateCart(price : Int , itemQuantity : Int ,  cellindex : Int)
-    func Removeitem(sparePart : item)
+    func Removeitem(itemIndex : Int)
 }
 
 class CartItemCollectionViewCell: UICollectionViewCell {
@@ -26,6 +26,10 @@ class CartItemCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var productQuantity: UILabel!
     
+    @IBOutlet weak var productSeller: UILabel!
+    
+    @IBOutlet weak var productCar: UIImageView!
+    
     var delegate : CartItemCellDelegate?
     
     func setCartItem(spare :item , cellindex : Int)
@@ -39,6 +43,8 @@ class CartItemCollectionViewCell: UICollectionViewCell {
         productName.text = spare.getName()
         productPrice.text = "\(spare.getPrice()) EGP" 
         productQuantity.text = "\(spare.getQuantity())"
+        productSeller.text = spare.getSeller()
+        productCar.image = UIImage(named : spare.getCarItem())
         
     }
    
@@ -66,4 +72,10 @@ class CartItemCollectionViewCell: UICollectionViewCell {
         print(quantityOrdered)
         productQuantity.text = "\(quantityOrdered)"
     }
+    
+    
+    @IBAction func RemoveItem(_ sender: UIButton) {
+        delegate?.Removeitem(itemIndex : cellindex)
+    }
+    
 }
