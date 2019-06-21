@@ -10,6 +10,8 @@
 		280A3BA622B9C8A0002F7458 /* CLLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280A3BA522B9C8A0002F7458 /* CLLocation.swift */; };
 		280AE06522B49F6600649FAA /* CartItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280AE06422B49F6600649FAA /* CartItemCollectionViewCell.swift */; };
 		280AE06B22B4A37400649FAA /* userCartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280AE06A22B4A37400649FAA /* userCartVC.swift */; };
+		280C679622BCA0330099AAAE /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280C679522BCA0330099AAAE /* UserProfileVC.swift */; };
+		280C679822BCA04D0099AAAE /* UserOrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280C679722BCA04D0099AAAE /* UserOrderVC.swift */; };
 		280C88F522BACD9800BF02A3 /* AdminControlPanelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280C88F422BACD9800BF02A3 /* AdminControlPanelVC.swift */; };
 		280C88FB22BB2A3A00BF02A3 /* Kappot.png in Resources */ = {isa = PBXBuildFile; fileRef = 280C88FA22BB2A3A00BF02A3 /* Kappot.png */; };
 		280DF25322B5CFBC00CBA174 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280DF25222B5CFBC00CBA174 /* Order.swift */; };
@@ -66,6 +68,8 @@
 		280A3BA522B9C8A0002F7458 /* CLLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocation.swift; sourceTree = "<group>"; };
 		280AE06422B49F6600649FAA /* CartItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		280AE06A22B4A37400649FAA /* userCartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userCartVC.swift; sourceTree = "<group>"; };
+		280C679522BCA0330099AAAE /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
+		280C679722BCA04D0099AAAE /* UserOrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOrderVC.swift; sourceTree = "<group>"; };
 		280C88F422BACD9800BF02A3 /* AdminControlPanelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminControlPanelVC.swift; sourceTree = "<group>"; };
 		280C88FA22BB2A3A00BF02A3 /* Kappot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Kappot.png; path = "../../../Downloads/Collection 4/Kappot.png"; sourceTree = "<group>"; };
 		280DF25222B5CFBC00CBA174 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
@@ -250,6 +254,8 @@
 				281073B522B2221E00E48262 /* OnlineShopVC.swift */,
 				280AE06A22B4A37400649FAA /* userCartVC.swift */,
 				280C88F422BACD9800BF02A3 /* AdminControlPanelVC.swift */,
+				280C679522BCA0330099AAAE /* UserProfileVC.swift */,
+				280C679722BCA04D0099AAAE /* UserOrderVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -561,6 +567,7 @@
 				431B9B0B22AB3F7E00C2BC93 /* Shop.swift in Sources */,
 				431C5A4522AB5CAB00138585 /* Car.swift in Sources */,
 				280AE06B22B4A37400649FAA /* userCartVC.swift in Sources */,
+				280C679822BCA04D0099AAAE /* UserOrderVC.swift in Sources */,
 				280A3BA622B9C8A0002F7458 /* CLLocation.swift in Sources */,
 				281297A622ACA684000A5067 /* MapVC.swift in Sources */,
 				2830DB9122B4279C005F098F /* customNavBar.swift in Sources */,
@@ -568,6 +575,7 @@
 				430C94AB2283017C00B37767 /* ShopsVC.swift in Sources */,
 				281073B422B20DC500E48262 /* SparePartCollectionViewCell.swift in Sources */,
 				431C5A4322AB5C6900138585 /* SparePart.swift in Sources */,
+				280C679622BCA0330099AAAE /* UserProfileVC.swift in Sources */,
 				280DF25322B5CFBC00CBA174 /* Order.swift in Sources */,
 				280AE06522B49F6600649FAA /* CartItemCollectionViewCell.swift in Sources */,
 				4373B20A227234B100E43FF4 /* CarSelectionVC.swift in Sources */,

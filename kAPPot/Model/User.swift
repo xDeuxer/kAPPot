@@ -60,28 +60,15 @@ class User: NSObject , CLLocationManagerDelegate{
                 user = User(name: docData["name"]!, email: email, password: docData["password"]!)
                 user.car.setCarModel(carModel: docData["car"]!)
                 DispatchQueue.main.async {
-                    Firestore.firestore().collection("Cart").document("\(email)").getDocument { (document, error) in
-                        if let document = document, document.exists {
-                            let dataDescription = document.data()
-                            guard let docData = dataDescription!["spares"] as? [[String : Any]] else { return }
-                            if(!docData.isEmpty){
-                                docData.forEach({ (retrievedSpareItem) in
-                                    let spareItem = item.createItem(spareName: retrievedSpareItem["name"] as! String, img_url: retrievedSpareItem["img_url"] as! String, price: retrievedSpareItem["price"] as! Int, quantity: retrievedSpareItem["quantity"] as! Int, carItem: retrievedSpareItem["carItem"] as! String, seller: retrievedSpareItem["seller"] as! String)
-                                    user.cart.items.append(spareItem)
-                                })
-                            }
-                            
-                            
-                            completion(.success(user))
-                            // print("Document data: \(dataDescription)")
-                            //   dump(user)
-                        } else {
-                            //completion(.failure(error!))
-                            print("Document does not exist")
+                    user.cart.getCartItems(email: user.getUserEmail(), completion: { (res) in
+                        switch res
+                        {
+                            case .success(let items):
+                                    user.cart.items = items
+                            case .failure(let error):
+                                print(error)
                         }
-                        
-                    }
-                    
+                    })
                 }
                 completion(.success(user))
                // print("Document data: \(dataDescription)")
@@ -113,6 +100,9 @@ class User: NSObject , CLLocationManagerDelegate{
     
     func getUserEmail() -> String {
         return self.email
+    }
+    func getUserName() -> String {
+        return self.name
     }
     
     class func getUserLocation() ->CLLocationCoordinate2D
