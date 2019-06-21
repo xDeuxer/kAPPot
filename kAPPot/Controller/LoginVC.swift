@@ -42,19 +42,24 @@ class LoginVC: UIViewController , FBSDKLoginButtonDelegate{
             }else{
                 User.signin(email: self.txtEmail.text!
                     , completion: { (res) in
+                        
                         switch res
                         {
+                        
+                            case .success(let user):
+                                
+                                User.loggedInUser = user
+                                dump(User.loggedInUser)
+                                DispatchQueue.main.async {
+                                    self.performSegue(withIdentifier: "goToCarSelectionFromLogIn", sender: self)
+                                }
                             
-                        case .success(let user):
-                            User.loggedInUser = user
-                            dump(User.loggedInUser)
-                            DispatchQueue.main.async {
-                                self.performSegue(withIdentifier: "goToCarSelectionFromLogIn", sender: self)
-                            }
+                            
+                            case .failure(let error):
+                                
+                                print(error)
                             
                             
-                        case .failure(let error):
-                            print(error)
                         }
                 })
                 print("User UID: \(String(describing: Auth.auth().currentUser!.email))")

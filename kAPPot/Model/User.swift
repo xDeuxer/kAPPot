@@ -52,6 +52,7 @@ class User: NSObject , CLLocationManagerDelegate{
     
     class func signin(email : String,completion: @escaping (Result<User,Error>) -> ())
     {
+        print("sign in is called")
         var user = User()
         Firestore.firestore().collection("User").document("\(email)").getDocument { (document, error) in
             if let document = document, document.exists {
@@ -66,12 +67,13 @@ class User: NSObject , CLLocationManagerDelegate{
                             case .success(let items):
                                     user.cart.items = items
                                     DispatchQueue.main.async {
-                                        user.order.getOrder(email: user.getUserEmail(), completion: { (res) in
-                                            switch res
+                                        user.order.getOrder(email: user.getUserEmail(), completion: { (res2) in
+                                            switch res2
                                             {
                                                 
                                             case .success(let userOrder):
                                                 user.order = userOrder
+                                            
                                                  completion(.success(user))
                                             case .failure(let error):
                                                 print(error)

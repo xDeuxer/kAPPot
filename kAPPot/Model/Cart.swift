@@ -37,12 +37,11 @@ class Cart {
                         temp.append(spareItem)
                     })
                 }
-                completion(.success(temp))
             }
-            else {
-                completion(.failure(error!))
-            }
+            completion(.success(temp))
+            
         }
+        completion(.success(temp))
     }
     func deleteCart()
     {

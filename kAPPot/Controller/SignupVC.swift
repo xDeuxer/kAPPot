@@ -55,8 +55,27 @@ class SignupVC: UIViewController {
                     let user = User(name: self.userName.text!, email: self.email.text!, password: self.password.text!)
                     if(user.signup())
                     {
+                        User.signin(email: self.email.text!
+                            , completion: { (res) in
+                               
+                                switch res
+                                {
+                                    
+                                case .success(let user):
+                                    
+                                    User.loggedInUser = user
+                                    
+                                    DispatchQueue.main.async {
+                                        self.performSegue(withIdentifier: "goToCarSelectionFromRegister", sender: self)
+                                    }
+                                    
+                                    
+                                case .failure(let error):
+                                    
+                                    print(error)
+                                }
+                        })
                         
-                        self.performSegue(withIdentifier: "goToCarSelectionFromRegister", sender: self)
                     }
                     else
                     {

@@ -64,12 +64,10 @@ class Order {
                         tempOrder.orderItems.append(spareItem)
                     })
                 }
-                dump(tempOrder)
-                completion(.success(tempOrder))
+                
             }
-            else {
-                completion(.failure(error!))
-            }
+            dump(tempOrder)
+            completion(.success(tempOrder))
         }
     }
     
