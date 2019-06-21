@@ -41,6 +41,7 @@ class userCartVC: UIViewController {
     
     @IBAction func placeOrder(_ sender: UIButton) {
         User.loggedInUser.order.createOrder()
+        User.loggedInUser.order.setTotalPrice(totalPrice : self.totalPrice)
         User.loggedInUser.cart.items.removeAll()
         User.loggedInUser.cart.updateUserCart()
         cart.reloadData()

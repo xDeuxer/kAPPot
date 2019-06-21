@@ -65,12 +65,25 @@ class User: NSObject , CLLocationManagerDelegate{
                         {
                             case .success(let items):
                                     user.cart.items = items
+                                    DispatchQueue.main.async {
+                                        user.order.getOrder(email: user.getUserEmail(), completion: { (res) in
+                                            switch res
+                                            {
+                                                
+                                            case .success(let userOrder):
+                                                user.order = userOrder
+                                                 completion(.success(user))
+                                            case .failure(let error):
+                                                print(error)
+                                            }
+                                        })
+                                    }
                             case .failure(let error):
                                 print(error)
                         }
                     })
                 }
-                completion(.success(user))
+               
                // print("Document data: \(dataDescription)")
              //   dump(user)
             } else {
