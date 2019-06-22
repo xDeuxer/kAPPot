@@ -10,13 +10,19 @@ import UIKit
 
 class ShopUpdate_DeletionVC: UIViewController {
 
+    var selectedShop = Shop()
     var retrievedShops = [Shop]()
+    var selectedCar :String = ""
+    var shopType :String = ""
+    var cellSelected : Int = 0
     
     @IBOutlet weak var shopsCollectionsView: UICollectionView!
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         shopsCollectionsView.reloadData()
@@ -38,7 +44,7 @@ extension ShopUpdate_DeletionVC: UICollectionViewDataSource , UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShopCell", for: indexPath) as! ShopCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShopCellA", for: indexPath) as! ShopCollectionViewCell
         
         
         
@@ -63,10 +69,23 @@ extension ShopUpdate_DeletionVC : ShopCellDelegate
 {
     func UpdateShop(shop: Shop, cellindex: Int) {
         
+        selectedShop = shop
+        cellSelected = cellindex
+        self.performSegue(withIdentifier: "Update", sender: self )
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! ShopAdditionVC
+        vc.updateShop(shop: selectedShop, cellindex: cellSelected, shopType: shopType)
+        
     }
     
     func DeleteShop(cellindex: Int) {
         
+        User.loggedInUser.deleteShopFromCar(cartype: selectedCar,shops: retrievedShops ,index: cellindex, shopType: shopType)
+        retrievedShops.remove(at: cellindex)
+        shopsCollectionsView.reloadData()
     }
     
     func getDirections(shop: Shop) {

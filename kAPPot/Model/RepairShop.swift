@@ -9,19 +9,25 @@
 import FirebaseFirestore
 import CoreLocation
 
-class RepairShop: Shop {
+class RepairShop: Shop ,Equatable{
+    
+    
     private var failureType:[String] = []
-    var selectedFailureType:String = ""
+    var selectedFailureType:[String] = []
     
     override init() {
         
     }
+    
     init(repairType : String)
     {
-        selectedFailureType = repairType
+        selectedFailureType.append(repairType)
+    }
+    init(faliureTypes : [String]) {
+        selectedFailureType = faliureTypes
     }
     
-    func setSelectedFailureType(failureType:String) {
+    func setSelectedFailureType(failureType:[String]) {
         self.selectedFailureType = failureType
     }
     
@@ -29,8 +35,8 @@ class RepairShop: Shop {
       self.failureType = failureType
     }
     
-    func getFailureType() -> [String] {
-      return self.failureType
+    class func getFailureType(shop:RepairShop) -> [String] {
+      return shop.failureType
     }
     
     override func getAllCarShops(carType : String,completion: @escaping (Result<[Shop], Error>) -> ()) {
@@ -48,14 +54,16 @@ class RepairShop: Shop {
                     guard let carShops = arr["Shops"] as? [[String : Any]] else{ return }
                     carShops.forEach({ (shop) in
                         let retrievedShop = RepairShop.convertToRepairShop(JsonObject: shop)
-                        let failureTypes = retrievedShop.getFailureType()
-                        if(failureTypes.contains("\(self.selectedFailureType)"))
-                        {
-                            retrievedShop.setDistanceFromUser(userLocation: User.getUserLocation(), shopLocation: CLLocationCoordinate2DMake(retrievedShop.getLocations()[0]["lat"]!, retrievedShop.getLocations()[0]["long"]!))
-                            temp.append(retrievedShop)
-                            
-                            
-                        }
+                        let failureTypes = RepairShop.getFailureType(shop: retrievedShop)
+                        self.selectedFailureType.forEach({ (type) in
+                            if(failureTypes.contains(type) && !temp.contains(retrievedShop))
+                            {
+                                retrievedShop.setDistanceFromUser(userLocation: User.getUserLocation(), shopLocation: CLLocationCoordinate2DMake(retrievedShop.getLocations()[0]["lat"]!, retrievedShop.getLocations()[0]["long"]!))
+                                temp.append(retrievedShop)
+                                
+                                
+                            }
+                        })
                     })
                     
                 }
@@ -74,6 +82,8 @@ class RepairShop: Shop {
         return temp
     }
 
-
+    static func == (lhs: RepairShop, rhs: RepairShop) -> Bool {
+        return RepairShop.getFailureType(shop: lhs) == RepairShop.getFailureType(shop: rhs) && lhs.getShopName() == rhs.getShopName()
+    }
 }
 

@@ -10,9 +10,17 @@ import UIKit
 
 class ShopAdditionVC: UIViewController {
 
+ 
     var shopType :String = ""
+    
     var selectedCars :[String] = []
+    
   //var addedShop  = Shop()
+    
+   
+    @IBOutlet weak var addButton: UIButton!
+    
+    @IBOutlet weak var updateButton: UIButton!
     
     @IBOutlet weak var shopName: UITextField!
     
@@ -55,6 +63,36 @@ class ShopAdditionVC: UIViewController {
         
         
     }
+    
+    func updateShop(shop : Shop , cellindex : Int , shopType : String)
+    {
+        //addButton.isHidden = true
+        //updateButton.isHidden = false
+        
+        shopName.text = shop.getShopName()
+        Latitude.text = "\(shop.getLocations()[0]["lat"])"
+        Longitude.text = "\(shop.getLocations()[0]["long"])"
+        telephoneNo.text = "\(shop.getTelephoneNo())"
+        Rating.text = "\(shop.getRating())"
+        
+        
+        if(shopType == "car_workshops")
+        {
+            failureType.isHidden = false
+            failureType.text = "\(RepairShop.getFailureType(shop: shop as! RepairShop))"
+        }else{
+            failureType.isHidden = true
+            
+        }
+        
+        
+    }
+    
+    @IBAction func updateShopButton(_ sender: UIButton) {
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
       

@@ -577,8 +577,27 @@
                                     </textField>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enter Shop information " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38J-T5-O5D">
+                                <rect key="frame" x="14" y="64" width="345" height="85"/>
+                                <color key="backgroundColor" red="0.0" green="0.32779301700000002" blue="0.47723667510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QYB-Df-hFM" customClass="customButton" customModule="kAPPot" customModuleProvider="target">
+                                <rect key="frame" x="204" y="571" width="155" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.32779301700000002" blue="0.47723667510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Update">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateShopButton:" destination="3KG-4d-20G" eventType="touchUpInside" id="2Qk-gN-ZO4"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OGf-UB-gdt" customClass="customButton" customModule="kAPPot" customModuleProvider="target">
-                                <rect key="frame" x="110" y="572" width="155" height="55"/>
+                                <rect key="frame" x="10" y="571" width="155" height="55"/>
                                 <color key="backgroundColor" red="0.64356806509999998" green="0.19215686269999999" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Apply">
@@ -588,13 +607,6 @@
                                     <action selector="addShop:" destination="3KG-4d-20G" eventType="touchUpInside" id="wXs-0Z-qSs"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enter Shop information " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38J-T5-O5D">
-                                <rect key="frame" x="14" y="64" width="345" height="85"/>
-                                <color key="backgroundColor" red="0.0" green="0.32779301700000002" blue="0.47723667510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -604,16 +616,16 @@
                             <constraint firstItem="d3e-bP-S4t" firstAttribute="centerX" secondItem="LPW-2C-g0K" secondAttribute="centerX" id="F4D-Xf-3m8"/>
                             <constraint firstItem="OOn-w6-rUg" firstAttribute="bottom" secondItem="d3e-bP-S4t" secondAttribute="bottom" constant="150" id="IUZ-sC-lej"/>
                             <constraint firstItem="OOn-w6-rUg" firstAttribute="trailing" secondItem="38J-T5-O5D" secondAttribute="trailing" constant="15" id="L5d-Rd-vwU"/>
-                            <constraint firstItem="OGf-UB-gdt" firstAttribute="top" secondItem="LPW-2C-g0K" secondAttribute="topMargin" constant="508" id="Mlb-TP-ZUe"/>
-                            <constraint firstItem="OOn-w6-rUg" firstAttribute="bottom" secondItem="OGf-UB-gdt" secondAttribute="bottom" constant="40" id="NYo-kl-uLE"/>
-                            <constraint firstItem="OGf-UB-gdt" firstAttribute="leading" secondItem="OOn-w6-rUg" secondAttribute="leading" constant="110" id="XMZ-D1-XEF"/>
+                            <constraint firstItem="OGf-UB-gdt" firstAttribute="top" secondItem="LPW-2C-g0K" secondAttribute="topMargin" constant="507" id="Mlb-TP-ZUe"/>
+                            <constraint firstItem="OOn-w6-rUg" firstAttribute="bottom" secondItem="OGf-UB-gdt" secondAttribute="bottom" constant="41" id="NYo-kl-uLE"/>
+                            <constraint firstItem="OGf-UB-gdt" firstAttribute="leading" secondItem="OOn-w6-rUg" secondAttribute="leading" constant="10" id="XMZ-D1-XEF"/>
                             <constraint firstItem="38J-T5-O5D" firstAttribute="top" secondItem="LPW-2C-g0K" secondAttribute="topMargin" id="as5-ZZ-IIV"/>
                             <constraint firstItem="38J-T5-O5D" firstAttribute="top" secondItem="OOn-w6-rUg" secondAttribute="top" id="c9m-Er-Xde"/>
                             <constraint firstItem="38J-T5-O5D" firstAttribute="leading" secondItem="OOn-w6-rUg" secondAttribute="leading" constant="15" id="cId-hl-nve"/>
                             <constraint firstAttribute="bottomMargin" secondItem="38J-T5-O5D" secondAttribute="bottom" constant="518" id="ftf-Cc-lIW"/>
                             <constraint firstItem="d3e-bP-S4t" firstAttribute="top" secondItem="OOn-w6-rUg" secondAttribute="top" constant="150" id="hVF-0M-yfd"/>
                             <constraint firstItem="d3e-bP-S4t" firstAttribute="leading" secondItem="OOn-w6-rUg" secondAttribute="leading" constant="10" id="o3d-Oq-syT"/>
-                            <constraint firstItem="OOn-w6-rUg" firstAttribute="trailing" secondItem="OGf-UB-gdt" secondAttribute="trailing" constant="110" id="pP2-97-SHW"/>
+                            <constraint firstItem="OOn-w6-rUg" firstAttribute="trailing" secondItem="OGf-UB-gdt" secondAttribute="trailing" constant="210" id="pP2-97-SHW"/>
                             <constraint firstItem="d3e-bP-S4t" firstAttribute="centerY" secondItem="LPW-2C-g0K" secondAttribute="centerY" id="s5I-vr-ALd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OOn-w6-rUg"/>
@@ -622,9 +634,11 @@
                         <outlet property="Latitude" destination="qzF-EG-OGR" id="5nS-pK-UJy"/>
                         <outlet property="Longitude" destination="PJb-43-Tei" id="A9k-2P-4wg"/>
                         <outlet property="Rating" destination="5AM-zF-lPo" id="1A6-bm-wD8"/>
+                        <outlet property="addButton" destination="OGf-UB-gdt" id="yuC-Bq-BaS"/>
                         <outlet property="failureType" destination="cAS-Qr-rV2" id="S2U-he-uF2"/>
                         <outlet property="shopName" destination="DiB-Ke-qNg" id="A66-lo-wK6"/>
                         <outlet property="telephoneNo" destination="lSc-F0-WEA" id="VQk-w2-YhQ"/>
+                        <outlet property="updateButton" destination="QYB-Df-hFM" id="wod-RY-0cu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UrN-zF-HcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1958,7 +1972,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ShopCell" id="vhD-eK-0kJ" customClass="ShopCollectionViewCell" customModule="kAPPot" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ShopCellA" id="vhD-eK-0kJ" customClass="ShopCollectionViewCell" customModule="kAPPot" customModuleProvider="target">
                                         <rect key="frame" x="13" y="10" width="349" height="374"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -2132,6 +2146,7 @@
                     <navigationItem key="navigationItem" title="Shops" id="nyx-pe-pFy"/>
                     <connections>
                         <outlet property="shopsCollectionsView" destination="Rgn-IP-N3h" id="PHa-mr-Prq"/>
+                        <segue destination="3KG-4d-20G" kind="show" identifier="Update" id="5A6-KZ-12s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jyk-Fh-aed" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2202,6 +2217,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="k7T-kt-kBe"/>
+        <segue reference="5A6-KZ-12s"/>
         <segue reference="uCf-qt-G0b"/>
     </inferredMetricsTieBreakers>
 </document>

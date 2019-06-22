@@ -13,7 +13,7 @@ class AdminControlPanelVC: UIViewController {
     
     var shopReference : Shop = Shop()
     var retrievedShops = [Shop]()
-    
+    var shopType :String = ""
   
    
     @IBOutlet weak var shopTypesHandle: UIButton!
@@ -68,6 +68,7 @@ class AdminControlPanelVC: UIViewController {
     
     
     @IBAction func shopDropDown(_ sender: UIButton) {
+     
         let temp = shopTypesHandle.currentTitle
         shopTypesHandle.setTitle(sender.currentTitle, for: .normal)
         sender.setTitle(temp, for: .normal)
@@ -123,7 +124,7 @@ class AdminControlPanelVC: UIViewController {
         else{
             if(shopTypesHandle.currentTitle == "Repair")
             {
-                shopReference = RepairShop(repairType:"Electrical")
+                shopReference = RepairShop(faliureTypes: ["Electrical" , "Mechanical" , "Tires"])
                 
             }
             self.loadDataforView {
@@ -153,6 +154,14 @@ class AdminControlPanelVC: UIViewController {
         }else if(segue.identifier == "Update/Delete"){
             let vc = segue.destination as! ShopUpdate_DeletionVC
             vc.retrievedShops = self.retrievedShops
+            vc.selectedCar = currentSelectedCar
+            if(shopTypesHandle.currentTitle == "Repair")
+            {
+                shopType = "car_workshops"
+            }else{
+                shopType = "car_stores"
+            }
+            vc.shopType = shopType
         }
     }
     

@@ -149,7 +149,7 @@ class User: NSObject , CLLocationManagerDelegate{
         }
         checkForLocationService()
         if CLLocationManager.locationServicesEnabled() {
-            print("enableeeed")
+            //print("enableeeed")
             let temp = locationManager.delegate
             locationManager.delegate = temp
             locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
@@ -182,5 +182,39 @@ class User: NSObject , CLLocationManagerDelegate{
                 "Shops": FieldValue.arrayUnion([shopDictionary])
                 ])
     }
+    func deleteShopFromCar(cartype : String ,shops : [Shop] ,index: Int ,shopType : String)
+    {
+        var myshops = shops
+        var newData : [[String : Any]] = []
+        print("enteeer delete funccccc")
+        myshops.remove(at: index)
+        myshops.forEach { (shopElement) in
+           
+            var shopDictionary = ["ShopName" : shopElement.getShopName() , "location" : shopElement.getLocations() , "rating" : shopElement.getRating() , "telephoneNo" : shopElement.getTelephoneNo() ] as [String : Any]
+            if(shopType == "car_workshops") { shopDictionary["failureType"] = RepairShop.getFailureType(shop: shopElement as! RepairShop) }
+            newData.append(shopDictionary)
+        }
+        Firestore.firestore().collection("\(shopType)").document("\(cartype)").setData(["Shops" : newData])
+        
+        
+    }
+    func updateShop(cartype : String ,shops : [Shop] ,index: Int ,shopType : String)
+    {
+        var myshops = shops
+        var newData : [[String : Any]] = []
+        print("enteeer delete funccccc")
+        myshops.remove(at: index)
+        myshops.forEach { (shopElement) in
+            
+            var shopDictionary = ["ShopName" : shopElement.getShopName() , "location" : shopElement.getLocations() , "rating" : shopElement.getRating() , "telephoneNo" : shopElement.getTelephoneNo() ] as [String : Any]
+            if(shopType == "car_workshops") { shopDictionary["failureType"] = RepairShop.getFailureType(shop: shopElement as! RepairShop) }
+            newData.append(shopDictionary)
+        }
+        Firestore.firestore().collection("\(shopType)").document("\(cartype)").setData(["Shops" : newData])
+        
+        
+    }
+    
+    
     
 }
