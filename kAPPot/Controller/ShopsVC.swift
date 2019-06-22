@@ -88,11 +88,11 @@ extension ShopsVC: UICollectionViewDataSource , UICollectionViewDelegate
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShopCell", for: indexPath) as! ShopCollectionViewCell
             
         
-            // cell.shopDistance.text=shopDistance[indexPath.row]
+        
         
             cell.delegate=self
             
-            cell.setShop(shop: self.Shops[indexPath.row])
+            cell.setShop(shop: self.Shops[indexPath.row] , cellindex: indexPath.row)
             
             cell.setupCellappearance()
         
@@ -129,13 +129,15 @@ extension ShopsVC: UICollectionViewDataSource , UICollectionViewDelegate
 
 extension ShopsVC : ShopCellDelegate
 {
-    func UpdateShop(shop: Shop) {
-        //
+    func UpdateShop(shop: Shop, cellindex: Int) {
+        //only operable in AdminVC
     }
     
-    func DeleteShop(shop: Shop) {
-        //
+    func DeleteShop(cellindex: Int) {
+        //only operable in AdminVC
     }
+    
+   
     
 
     func getDirections(shop : Shop) {

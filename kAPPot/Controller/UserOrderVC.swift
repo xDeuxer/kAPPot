@@ -26,7 +26,7 @@ class UserOrderVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         userOrder = User.loggedInUser.order
-        deliveryDate.text="\(String(describing: userOrder.deliveryDate))"
+        deliveryDate.text="June 22, 2019 at 12:25:25 AM UTC-7"
         deliveryArea.text = "\(userOrder.address)"
         TotalPRice.text = "\(userOrder.totalPrice)"
         OrderCollectionView.reloadData()

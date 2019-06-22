@@ -14,9 +14,9 @@ protocol ShopCellDelegate {
     
     func shopOnline(shop : Shop)
     
-    func UpdateShop(shop : Shop)
+    func UpdateShop(shop : Shop , cellindex :Int)
     
-    func DeleteShop(shop : Shop)
+    func DeleteShop(cellindex : Int)
     
 }
 
@@ -36,11 +36,14 @@ class ShopCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var OnlineBu: UIButton!
     
     var selectedShop = Shop()
+    var cellIndex : Int = 5
     
     var delegate : ShopCellDelegate?
-    func setShop(shop : Shop)
+    func setShop(shop : Shop , cellindex : Int)
     {
         selectedShop=shop
+        
+        cellIndex = cellindex
         
       //  shopImage.image = UIImage(named : "\(selectedShop.SupportedCar.getCarModel())")
         shopName.text=selectedShop.getShopName()
@@ -51,7 +54,7 @@ class ShopCollectionViewCell: UICollectionViewCell {
         let rating = selectedShop.getRating()
         shopRating.text="\(rating)"
         
-        shopDistance.text = "\(selectedShop.distance)"
+        shopDistance.text = "\(selectedShop.distance) Km"
         
     }
     
@@ -64,9 +67,10 @@ class ShopCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func UpdateShop(_ sender: Any) {
-        
+        delegate?.UpdateShop(shop: selectedShop, cellindex: cellIndex)
     }
     
     @IBAction func DeleteShop(_ sender: Any) {
+        delegate?.DeleteShop(cellindex: cellIndex)
     }
 }
