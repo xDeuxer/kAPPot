@@ -20,7 +20,7 @@ class Order {
         let today = Date()
         self.deliveryDate = Calendar.current.date(byAdding: .day, value: 1, to: today)!
         self.setItemsInCart {
-            MapVC.convertLatLongToAddress(latitude: User.getUserLocation().latitude, longitude: User.getUserLocation().longitude, completion: { (res) in
+            MapVC.convertLatLongToAddress(latitude: User.loggedInUser.getUserLocation().latitude, longitude: User.loggedInUser.getUserLocation().longitude, completion: { (res) in
                 switch res
                 {
                 case .success(let userAddress):

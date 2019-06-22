@@ -18,7 +18,8 @@ class MapVC: UIViewController , MKMapViewDelegate ,CLLocationManagerDelegate{
     
     
     var selectedShop = Shop()
-    
+    var AllShops = [Shop]()
+    var action : String = ""
     let locationManager = CLLocationManager()
     var userLocation:CLLocationCoordinate2D!
     var destination:CLLocationCoordinate2D!
@@ -28,6 +29,13 @@ class MapVC: UIViewController , MKMapViewDelegate ,CLLocationManagerDelegate{
     override func viewDidLoad() {
         //super.viewDidLoad()
         loadUserLocation(){ () in
+            if(self.action == "ShowAllShops"){
+                self.AllShops.forEach({ (shop) in
+                    shop.getLocations().forEach({ (location) in
+                        self.createMarker(titleMarker: self.selectedShop.getShopName(), ShopLocation: location, subtitle: "\(self.selectedShop.getShopName()) for repair shops")
+                    })
+                })
+            }
             if self.selectedShop.getLocations().count == 1 {
                 let destination = CLLocationCoordinate2DMake(self.selectedShop.getLocations()[0]["lat"]!, self.selectedShop.getLocations()[0]["long"]!)
                 self.createMarker(titleMarker: self.selectedShop.getShopName(), ShopLocation: self.selectedShop.getLocations()[0], subtitle: "\(self.selectedShop.getShopName()) for repair shops")
@@ -45,7 +53,8 @@ class MapVC: UIViewController , MKMapViewDelegate ,CLLocationManagerDelegate{
         
     }
     func loadUserLocation(completion : @escaping () -> ()) {
-        self.userLocation = User.getUserLocation()
+        self.userLocation = User.loggedInUser.getUserLocation()
+        self.map.showsUserLocation = true
         completion()
         
     }

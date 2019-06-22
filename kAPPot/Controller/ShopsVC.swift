@@ -28,6 +28,16 @@ class ShopsVC:  UIViewController {
         super.viewDidLoad()
         
     }
+    
+    
+    
+    @IBAction func showAllShops(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "ShowAllShopsOnMap", sender: self)
+    }
+    
+    
+    
     func loadCarSpares(completion: @escaping () -> Void) {
         self.carSpares.removeAll()
         User.loggedInUser.car.getAllCarSpares{ (res) in
@@ -161,12 +171,17 @@ extension ShopsVC : ShopCellDelegate
             let vc = segue
                 .destination as! MapVC
             vc.selectedShop = self.selectdShop
+        }else if(segue.identifier == "ShowAllShopsOnMap"){
+            
+            let vc = segue.destination as! MapVC
+            vc.AllShops = Shops
+            vc.action = "ShowAllShops"
+            
         }else{
             let vc = segue.destination as! OnlineShopVC
             print(carSpares.count)
             vc.selectedOnlineShop=self.selectdShop
             vc.shopSpareParts = self.carSpares
-            
         }
         
     }

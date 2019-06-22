@@ -129,7 +129,7 @@ class User: NSObject , CLLocationManagerDelegate{
         return self.name
     }
     
-    class func getUserLocation() ->CLLocationCoordinate2D
+    func getUserLocation() ->CLLocationCoordinate2D
     {
         var defaultLoc = CLLocationCoordinate2DMake(29.964046,30.948015)//(30.031218, 31.21052)
         let locationManager = CLLocationManager()
@@ -137,9 +137,7 @@ class User: NSObject , CLLocationManagerDelegate{
         {
             switch  CLLocationManager.authorizationStatus() {
             case .authorizedWhenInUse:
-                //map.showsUserLocation = true
                 locationManager.startUpdatingLocation()
-            //moveCameraToUserLocation()
             case .notDetermined:
                 locationManager.requestWhenInUseAuthorization()
                 
@@ -155,25 +153,21 @@ class User: NSObject , CLLocationManagerDelegate{
             locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
             locationManager.startUpdatingLocation()
         }
+        
         func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
             defaultLoc = locations[locations.count - 1].coordinate
-            //let myloc = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
-            //userLocation = myloc
+            
             if locations[locations.count - 1].horizontalAccuracy > 0{
                 locationManager.stopUpdatingLocation()
                 
                 
-                //  createMarker(titleMarker: "me", iconMarker: UIImage(named : "MapCar")!, snippet: "cairo uni", latitude: myloc.latitude, longitude: myloc.longitude)
-                
             }
         }
-        func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-            
-        }
+        
         func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
             checkForLocationService()
         }
-        return defaultLoc
+        return (locationManager.location?.coordinate)!
     }
     
     func addShopToCar(cartype : String , shop : Shop , ShopType : String) {

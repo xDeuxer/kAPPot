@@ -58,7 +58,7 @@ class RepairShop: Shop ,Equatable{
                         self.selectedFailureType.forEach({ (type) in
                             if(failureTypes.contains(type) && !temp.contains(retrievedShop))
                             {
-                                retrievedShop.setDistanceFromUser(userLocation: User.getUserLocation(), shopLocation: CLLocationCoordinate2DMake(retrievedShop.getLocations()[0]["lat"]!, retrievedShop.getLocations()[0]["long"]!))
+                                retrievedShop.setDistanceFromUser(userLocation: User.loggedInUser.getUserLocation(), shopLocation: CLLocationCoordinate2DMake(retrievedShop.getLocations()[0]["lat"]!, retrievedShop.getLocations()[0]["long"]!))
                                 temp.append(retrievedShop)
                                 
                                 
