@@ -17,6 +17,7 @@ class User: NSObject , CLLocationManagerDelegate{
     var name : String = ""
     var email : String = ""
     var password : String = ""
+    var type : String = "user"
     var car = Car()
     var cart = Cart()
     var order = Order()
@@ -24,11 +25,13 @@ class User: NSObject , CLLocationManagerDelegate{
     override init() {
         
     }
-    init(name : String , email : String , password : String)
+    init(name : String , email : String , password : String , type : String)
     {
         self.name = name
         self.email = email
         self.password = password
+        self.type = type
+        
     }
     
     func signup() -> Bool
@@ -38,6 +41,7 @@ class User: NSObject , CLLocationManagerDelegate{
             "name" : "\(self.name)",
             "email" : "\(self.email)",
             "password" : "\(self.password)",
+            "type" : "\(self.type)",
             "car" : ""
         ]) { err in
             if let err = err {
@@ -58,7 +62,9 @@ class User: NSObject , CLLocationManagerDelegate{
             if let document = document, document.exists {
                 let dataDescription = document.data()
                 guard let docData = dataDescription as? [String : String] else { return }
-                user = User(name: docData["name"]!, email: email, password: docData["password"]!)
+                if(docData["type"]! == "admin") { user = Admin(name: docData["name"]!, email: email, password: docData["password"]! , type : docData["type"]!) }
+                else { user = User(name: docData["name"]!, email: email, password: docData["password"]! , type : docData["type"]!) }
+                
                 user.car.setCarModel(carModel: docData["car"]!)
                 DispatchQueue.main.async {
                     user.cart.getCartItems(email: user.getUserEmail(), completion: { (res) in
@@ -96,6 +102,9 @@ class User: NSObject , CLLocationManagerDelegate{
         }
         
         
+    }
+    func getUserType() -> String {
+        return self.type
     }
     
     func setUserCar(carModel : String)
@@ -165,6 +174,13 @@ class User: NSObject , CLLocationManagerDelegate{
             checkForLocationService()
         }
         return defaultLoc
+    }
+    
+    func addShopToCar(cartype : String , shop : Shop , ShopType : String) {
+        let shopDictionary = ["shopName" : shop.getShopName() , "location" : shop.getLocations() , "rating" : shop.getRating() , "telephoneNo" : shop.getTelephoneNo()] as [String : Any]
+        Firestore.firestore().collection("\(ShopType)").document("\(cartype)").updateData([
+                "Shops": FieldValue.arrayUnion([shopDictionary])
+                ])
     }
     
 }

@@ -14,8 +14,8 @@ class AdminControlPanelVC: UIViewController {
     var shopReference : Shop = Shop()
     var retrievedShops = [Shop]()
     
-    @IBOutlet weak var shopsCollectionView: UICollectionView!
-    //////////////
+  
+   
     @IBOutlet weak var shopTypesHandle: UIButton!
     
     @IBOutlet weak var dropDownShop: UIButton!
@@ -27,16 +27,36 @@ class AdminControlPanelVC: UIViewController {
     
     @IBOutlet weak var dropDownOperation: UIButton!
     
-    
+    var currentSelectedCar:String = ""
     var selectedCars = ["","","","","","","","",""]
-    var currentSelectedCar : String = ""
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.customNavBar()
+        
 
         // Do any additional setup after loading the view.
     }
+  
     
+    
+    func loadDataforView(completion: @escaping () -> Void) {
+        self.retrievedShops.removeAll()
+        self.shopReference.getAllCarShops(carType:currentSelectedCar) { (res) in
+            
+            switch res
+            {
+                
+            case .success(let retrievedShops):
+                
+                self.retrievedShops = retrievedShops
+                completion()
+            case .failure(let error):
+                print("\(error)")
+                completion()
+            }
+        }
+    }
     
     ///////////////////////////
     @IBAction func shopHandle(_ sender: UIButton) {
@@ -79,12 +99,12 @@ class AdminControlPanelVC: UIViewController {
         sender.isSelected = !sender.isSelected
         if(sender.isSelected)
         {
-            currentSelectedCar = sender.currentTitle ?? ""
+            currentSelectedCar=sender.currentTitle!
             selectedCars[sender.tag] = sender.currentTitle ?? ""
           
             
         }else{
-            currentSelectedCar = ""
+            currentSelectedCar=sender.currentTitle!
             selectedCars[sender.tag] = ""
             
         }
@@ -94,67 +114,53 @@ class AdminControlPanelVC: UIViewController {
     
     
     @IBAction func ApplyOperation(_ sender: UIButton) {
-        if(sender.currentTitle == "Repair")
-        {
-            shopReference = RepairShop()
-            
+       if(operationTypeHandle.currentTitle == "Add")
+       {
+
+            self.performSegue(withIdentifier: "Add", sender: self)
+        
+       }
+        else{
+            if(sender.currentTitle == "Repair")
+            {
+                shopReference = RepairShop(repairType:"Electrical")
+                
+            }
+            self.loadDataforView {
+                DispatchQueue.main.async {
+                    
+                    self.performSegue(withIdentifier: "Update/Delete", sender: self)
+                }
+            }
+        
+        
+        
         }
-        self.performSegue(withIdentifier: operationTypeHandle.currentTitle!, sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if(segue.identifier == "Add")
+        {
+            let vc = segue.destination as! ShopAdditionVC
+            selectedCars.forEach { (car) in
+                if (car != "")
+                {
+                    vc.selectedCars.append(car)
+                }
+            }
+            vc.shopType = shopTypesHandle.currentTitle!
+        }else if(segue.identifier == "Update/Delete"){
+            let vc = segue.destination as! ShopUpdate_DeletionVC
+            vc.retrievedShops = self.retrievedShops
+        }
     }
     
     
 
 }
-extension AdminControlPanelVC: UICollectionViewDataSource , UICollectionViewDelegate
-{
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return 1
-       // return retrievedShops.count
-        
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShopCell", for: indexPath) as! ShopCollectionViewCell
-        
-        
-       
-        
-        cell.delegate=self
-        
-        //cell.setShop(shop: retrievedShops[indexPath.row] , cellindex: indexPath.row)
-        
-        cell.setupCellappearance()
-   
-        
-        return cell
-        
-        
-    }
-}
 
 
 
-extension AdminControlPanelVC : ShopCellDelegate
-{
-    func UpdateShop(shop: Shop, cellindex: Int) {
-        
-    }
-    
-    func DeleteShop(cellindex: Int) {
-        
-    }
-    
-    func getDirections(shop: Shop) {
-        // only operable in ShopsVC
-    }
-    
-    func shopOnline(shop: Shop) {
-        // only operable in ShopsVC
-    }
-    
- 
-    
-}
+
+

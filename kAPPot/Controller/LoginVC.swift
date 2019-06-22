@@ -45,10 +45,16 @@ class LoginVC: UIViewController {
                         
                             case .success(let user):
                                 
-                                User.loggedInUser = user
+                                User.loggedInUser = user 
                                 dump(User.loggedInUser)
                                 DispatchQueue.main.async {
-                                    self.performSegue(withIdentifier: "goToCarSelectionFromLogIn", sender: self)
+                                    if(user.getUserType() == "user"){
+                                        self.performSegue(withIdentifier: "goToKappot", sender: self)
+                                    }
+                                    else {
+                                        
+                                        self.performSegue(withIdentifier: "GoToAdminPanel", sender: self)
+                                    }
                                 }
                             
                             

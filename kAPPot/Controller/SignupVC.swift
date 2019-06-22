@@ -52,7 +52,7 @@ class SignupVC: UIViewController {
             }
             Auth.auth().createUser(withEmail: email.text!, password: password.text!){ (user, error) in
                 if error == nil {
-                    let user = User(name: self.userName.text!, email: self.email.text!, password: self.password.text!)
+                    let user = User(name: self.userName.text!, email: self.email.text!, password: self.password.text!,type: "user")
                     if(user.signup())
                     {
                         User.signin(email: self.email.text!

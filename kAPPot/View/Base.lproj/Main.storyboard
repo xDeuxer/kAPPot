@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jg2-Iu-X1U">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M1p-pN-JkY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -165,7 +165,8 @@
                     <connections>
                         <outlet property="txtEmail" destination="uuB-ZQ-uc3" id="e8O-2S-Hlt"/>
                         <outlet property="txtPassword" destination="rBK-Ec-yeR" id="tQt-XS-DCf"/>
-                        <segue destination="oJQ-a1-tdD" kind="showDetail" identifier="goToCarSelectionFromLogIn" id="uCf-qt-G0b"/>
+                        <segue destination="oJQ-a1-tdD" kind="showDetail" identifier="goToKappot" id="uCf-qt-G0b"/>
+                        <segue destination="jg2-Iu-X1U" kind="showDetail" identifier="GoToAdminPanel" id="quG-Us-mbF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hWh-1q-5ng" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -530,7 +531,7 @@
         <!--Adding Shops-->
         <scene sceneID="agL-WV-b3Y">
             <objects>
-                <viewController title="Adding Shops" id="3KG-4d-20G" customClass="AdminControlPanelVC" customModule="kAPPot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Adding Shops" id="3KG-4d-20G" customClass="ShopAdditionVC" customModule="kAPPot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LPW-2C-g0K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -539,31 +540,37 @@
                                 <rect key="frame" x="10" y="214" width="355" height="303"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Shop Name :" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DiB-Ke-qNg">
-                                        <rect key="frame" x="0.0" y="0.0" width="355" height="56.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="46.5"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location ( Latitude ) :" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qzF-EG-OGR">
-                                        <rect key="frame" x="0.0" y="61.5" width="355" height="56.5"/>
+                                        <rect key="frame" x="0.0" y="51.5" width="355" height="46"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location ( Longitude ) :" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PJb-43-Tei">
-                                        <rect key="frame" x="0.0" y="123" width="355" height="57"/>
+                                        <rect key="frame" x="0.0" y="102.5" width="355" height="46.5"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Telephone No(s) :" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lSc-F0-WEA">
-                                        <rect key="frame" x="0.0" y="185" width="355" height="56.5"/>
+                                        <rect key="frame" x="0.0" y="154" width="355" height="46.5"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Rating :" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5AM-zF-lPo">
-                                        <rect key="frame" x="0.0" y="246.5" width="355" height="56.5"/>
+                                        <rect key="frame" x="0.0" y="205.5" width="355" height="46"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Failure Type :" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cAS-Qr-rV2">
+                                        <rect key="frame" x="0.0" y="256.5" width="355" height="46.5"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -577,6 +584,9 @@
                                 <state key="normal" title="Apply">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="addShop:" destination="3KG-4d-20G" eventType="touchUpInside" id="wXs-0Z-qSs"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enter Shop information " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38J-T5-O5D">
                                 <rect key="frame" x="14" y="64" width="345" height="85"/>
@@ -608,10 +618,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OOn-w6-rUg"/>
                     </view>
+                    <connections>
+                        <outlet property="Latitude" destination="qzF-EG-OGR" id="5nS-pK-UJy"/>
+                        <outlet property="Longitude" destination="PJb-43-Tei" id="A9k-2P-4wg"/>
+                        <outlet property="Rating" destination="5AM-zF-lPo" id="1A6-bm-wD8"/>
+                        <outlet property="failureType" destination="cAS-Qr-rV2" id="S2U-he-uF2"/>
+                        <outlet property="shopName" destination="DiB-Ke-qNg" id="A66-lo-wK6"/>
+                        <outlet property="telephoneNo" destination="lSc-F0-WEA" id="VQk-w2-YhQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UrN-zF-HcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6013.6000000000004" y="2550.6746626686659"/>
+            <point key="canvasLocation" x="6953" y="2606"/>
         </scene>
         <!--Sign Up-->
         <scene sceneID="zv1-vb-fOc">
@@ -1922,7 +1940,7 @@
         <!--Update/Delete Shops-->
         <scene sceneID="vPd-eO-hRY">
             <objects>
-                <viewController title="Update/Delete Shops" id="9jd-1z-lT0" userLabel="Update/Delete Shops" customClass="AdminControlPanelVC" customModule="kAPPot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Update/Delete Shops" id="9jd-1z-lT0" userLabel="Update/Delete Shops" customClass="ShopUpdate_DeletionVC" customModule="kAPPot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JUb-GK-YaS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2097,8 +2115,8 @@
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="9jd-1z-lT0" id="jAw-k7-0C1"/>
-                                    <outlet property="delegate" destination="9jd-1z-lT0" id="hyC-uI-4ar"/>
+                                    <outlet property="dataSource" destination="9jd-1z-lT0" id="S32-wd-qE9"/>
+                                    <outlet property="delegate" destination="9jd-1z-lT0" id="gpb-iz-0xS"/>
                                 </connections>
                             </collectionView>
                         </subviews>
@@ -2113,7 +2131,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Shops" id="nyx-pe-pFy"/>
                     <connections>
-                        <outlet property="shopsCollectionView" destination="Rgn-IP-N3h" id="dPU-yT-R5d"/>
+                        <outlet property="shopsCollectionsView" destination="Rgn-IP-N3h" id="PHa-mr-Prq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jyk-Fh-aed" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2184,6 +2202,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="k7T-kt-kBe"/>
-        <segue reference="PXa-TT-6cq"/>
+        <segue reference="uCf-qt-G0b"/>
     </inferredMetricsTieBreakers>
 </document>

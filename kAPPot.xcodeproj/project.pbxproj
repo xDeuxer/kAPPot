@@ -14,6 +14,7 @@
 		280C679822BCA04D0099AAAE /* UserOrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280C679722BCA04D0099AAAE /* UserOrderVC.swift */; };
 		280C88F522BACD9800BF02A3 /* AdminControlPanelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280C88F422BACD9800BF02A3 /* AdminControlPanelVC.swift */; };
 		280C88FB22BB2A3A00BF02A3 /* Kappot.png in Resources */ = {isa = PBXBuildFile; fileRef = 280C88FA22BB2A3A00BF02A3 /* Kappot.png */; };
+		280CD0F122BDC25300EC6B13 /* Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280CD0F022BDC25300EC6B13 /* Admin.swift */; };
 		280DF25322B5CFBC00CBA174 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280DF25222B5CFBC00CBA174 /* Order.swift */; };
 		280DF25522B5E8C900CBA174 /* item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280DF25422B5E8C900CBA174 /* item.swift */; };
 		281073B022B1EE7000E48262 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281073AF22B1EE7000E48262 /* CollectionViewCell.swift */; };
@@ -21,6 +22,8 @@
 		281073B622B2221E00E48262 /* OnlineShopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281073B522B2221E00E48262 /* OnlineShopVC.swift */; };
 		281297A622ACA684000A5067 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281297A522ACA684000A5067 /* MapVC.swift */; };
 		2830DB9122B4279C005F098F /* customNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830DB9022B4279C005F098F /* customNavBar.swift */; };
+		2856938722BDD81E00EEFC5A /* ShopAdditionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2856938622BDD81E00EEFC5A /* ShopAdditionVC.swift */; };
+		2856938922BDF91F00EEFC5A /* ShopUpdate&DeletionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2856938822BDF91F00EEFC5A /* ShopUpdate&DeletionVC.swift */; };
 		28B7CD6322B0883C0079B003 /* customButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B7CD6222B0883C0079B003 /* customButton.swift */; };
 		430C94A92282FECA00B37767 /* ShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430C94A82282FECA00B37767 /* ShopCollectionViewCell.swift */; };
 		430C94AB2283017C00B37767 /* ShopsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430C94AA2283017C00B37767 /* ShopsVC.swift */; };
@@ -72,6 +75,7 @@
 		280C679722BCA04D0099AAAE /* UserOrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOrderVC.swift; sourceTree = "<group>"; };
 		280C88F422BACD9800BF02A3 /* AdminControlPanelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminControlPanelVC.swift; sourceTree = "<group>"; };
 		280C88FA22BB2A3A00BF02A3 /* Kappot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Kappot.png; path = "../../../Downloads/Collection 4/Kappot.png"; sourceTree = "<group>"; };
+		280CD0F022BDC25300EC6B13 /* Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Admin.swift; sourceTree = "<group>"; };
 		280DF25222B5CFBC00CBA174 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		280DF25422B5E8C900CBA174 /* item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = item.swift; sourceTree = "<group>"; };
 		281073AF22B1EE7000E48262 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 		281073B522B2221E00E48262 /* OnlineShopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineShopVC.swift; sourceTree = "<group>"; };
 		281297A522ACA684000A5067 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		2830DB9022B4279C005F098F /* customNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customNavBar.swift; sourceTree = "<group>"; };
+		2856938622BDD81E00EEFC5A /* ShopAdditionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopAdditionVC.swift; sourceTree = "<group>"; };
+		2856938822BDF91F00EEFC5A /* ShopUpdate&DeletionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopUpdate&DeletionVC.swift"; sourceTree = "<group>"; };
 		28B7CD6222B0883C0079B003 /* customButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customButton.swift; sourceTree = "<group>"; };
 		311A9157C33FFDAAEE327C75 /* Pods-kAPPotUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kAPPotUITests.debug.xcconfig"; path = "Target Support Files/Pods-kAPPotUITests/Pods-kAPPotUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		394030609E9F3036FE5270F3 /* Pods-kAPPotTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kAPPotTests.debug.xcconfig"; path = "Target Support Files/Pods-kAPPotTests/Pods-kAPPotTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -256,6 +262,8 @@
 				280C88F422BACD9800BF02A3 /* AdminControlPanelVC.swift */,
 				280C679522BCA0330099AAAE /* UserProfileVC.swift */,
 				280C679722BCA04D0099AAAE /* UserOrderVC.swift */,
+				2856938622BDD81E00EEFC5A /* ShopAdditionVC.swift */,
+				2856938822BDF91F00EEFC5A /* ShopUpdate&DeletionVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -271,6 +279,7 @@
 				431C5A4A22AB5DD800138585 /* Cart.swift */,
 				280DF25222B5CFBC00CBA174 /* Order.swift */,
 				280DF25422B5E8C900CBA174 /* item.swift */,
+				280CD0F022BDC25300EC6B13 /* Admin.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -561,6 +570,7 @@
 				431C5A4B22AB5DD800138585 /* Cart.swift in Sources */,
 				28B7CD6322B0883C0079B003 /* customButton.swift in Sources */,
 				430C94A92282FECA00B37767 /* ShopCollectionViewCell.swift in Sources */,
+				2856938722BDD81E00EEFC5A /* ShopAdditionVC.swift in Sources */,
 				434CD984225EC03A0098BC1B /* AppDelegate.swift in Sources */,
 				4373B230227628E500E43FF4 /* CarLogoCollectionViewCell.swift in Sources */,
 				435AC936227648B100F2D716 /* ProgressionScreenVC.swift in Sources */,
@@ -568,6 +578,7 @@
 				431C5A4522AB5CAB00138585 /* Car.swift in Sources */,
 				280AE06B22B4A37400649FAA /* userCartVC.swift in Sources */,
 				280C679822BCA04D0099AAAE /* UserOrderVC.swift in Sources */,
+				2856938922BDF91F00EEFC5A /* ShopUpdate&DeletionVC.swift in Sources */,
 				280A3BA622B9C8A0002F7458 /* CLLocation.swift in Sources */,
 				281297A622ACA684000A5067 /* MapVC.swift in Sources */,
 				2830DB9122B4279C005F098F /* customNavBar.swift in Sources */,
@@ -576,6 +587,7 @@
 				281073B422B20DC500E48262 /* SparePartCollectionViewCell.swift in Sources */,
 				431C5A4322AB5C6900138585 /* SparePart.swift in Sources */,
 				280C679622BCA0330099AAAE /* UserProfileVC.swift in Sources */,
+				280CD0F122BDC25300EC6B13 /* Admin.swift in Sources */,
 				280DF25322B5CFBC00CBA174 /* Order.swift in Sources */,
 				280AE06522B49F6600649FAA /* CartItemCollectionViewCell.swift in Sources */,
 				4373B20A227234B100E43FF4 /* CarSelectionVC.swift in Sources */,
