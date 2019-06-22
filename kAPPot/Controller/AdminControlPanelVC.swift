@@ -121,7 +121,7 @@ class AdminControlPanelVC: UIViewController {
         
        }
         else{
-            if(sender.currentTitle == "Repair")
+            if(shopTypesHandle.currentTitle == "Repair")
             {
                 shopReference = RepairShop(repairType:"Electrical")
                 

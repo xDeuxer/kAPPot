@@ -68,7 +68,7 @@ class CarSelectionVC: UIViewController {
     @IBAction func ChosenServiceBu(_ sender: UIButton) {
         //print(sender.title(for: .normal))
 
-        // Repair Shops
+        // Rspare shops
         if( sender.tag == 4 ){
             self.ShopReference = Shop()
             self.RepairTypes.isHidden=true
