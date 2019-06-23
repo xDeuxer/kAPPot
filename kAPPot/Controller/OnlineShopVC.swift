@@ -25,6 +25,13 @@ class OnlineShopVC: UIViewController {
         self.loadShopData()
         // Do any additional setup after loading the view.
     }
+    func showAlert(message : String , title : String) {
+        let alertController = UIAlertController(title: title , message:"\(message)", preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        
+        alertController.addAction(defaultAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
     
     func loadShopData(){
         self.shopName.text=selectedOnlineShop.getShopName()
@@ -71,19 +78,7 @@ extension OnlineShopVC : UICollectionViewDelegate , UICollectionViewDataSource
         
         
     }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath)
-        let cell = collectionView.cellForItem(at: indexPath)
-        cell?.layer.borderWidth = 2.0
-        cell?.layer.borderColor = UIColor.black.cgColor
-        cell?.backgroundColor = .lightGray
-    }
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath)
-        cell?.layer.borderWidth = 0.0
-        cell?.backgroundColor = .white
-        
-    }
+  
     
 }
 extension OnlineShopVC : sparePartCellDelegate
@@ -96,7 +91,11 @@ extension OnlineShopVC : sparePartCellDelegate
         if(!User.loggedInUser.cart.items.contains(spareItem)) {
             User.loggedInUser.cart.items.append(spareItem)
             User.loggedInUser.cart.updateUserCart()
+            showAlert(message: "Item added to cart Successfully", title: "Success")
+        }else{
+            showAlert(message: "Item is already in cart", title: "")
         }
+        
     }
     
     

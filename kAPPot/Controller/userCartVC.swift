@@ -9,6 +9,13 @@
 import UIKit
 
 class userCartVC: UIViewController {
+    func showAlert(message : String , title : String) {
+        let alertController = UIAlertController(title: title , message:"\(message)", preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        
+        alertController.addAction(defaultAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
 
     @IBOutlet weak var cart: UICollectionView!
     @IBOutlet weak var cartPrice: UILabel!
@@ -44,6 +51,8 @@ class userCartVC: UIViewController {
         User.loggedInUser.order.setTotalPrice(totalPrice : self.totalPrice)
         User.loggedInUser.cart.items.removeAll()
         User.loggedInUser.cart.updateUserCart()
+        showAlert(message: "Order placed Successfully" , title: "Success")
+        
         cart.reloadData()
     }
     

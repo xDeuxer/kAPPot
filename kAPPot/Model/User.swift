@@ -167,7 +167,7 @@ class User: NSObject , CLLocationManagerDelegate{
         func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
             checkForLocationService()
         }
-        return (locationManager.location?.coordinate)!
+        return defaultLoc //(locationManager.location?.coordinate)!
     }
     
     func addShopToCar(cartype : String , shop : Shop , ShopType : String) {
@@ -192,19 +192,20 @@ class User: NSObject , CLLocationManagerDelegate{
         
         
     }
-    func updateShop(cartype : String ,shops : [Shop] ,index: Int ,shopType : String)
+    func updateShop(cartype : String ,UpdatedShop : Shop,shops : [Shop] ,index: Int ,shopType : String)
     {
         var myshops = shops
         var newData : [[String : Any]] = []
-        print("enteeer delete funccccc")
-        myshops.remove(at: index)
+        print("enteeer update funccccc")
+        
+        myshops[index] = UpdatedShop
         myshops.forEach { (shopElement) in
             
             var shopDictionary = ["ShopName" : shopElement.getShopName() , "location" : shopElement.getLocations() , "rating" : shopElement.getRating() , "telephoneNo" : shopElement.getTelephoneNo() ] as [String : Any]
-            if(shopType == "car_workshops") { shopDictionary["failureType"] = RepairShop.getFailureType(shop: shopElement as! RepairShop) }
+            if(shopType == "Repair") { shopDictionary["failureType"] = RepairShop.getFailureType(shop: shopElement as! RepairShop) }
             newData.append(shopDictionary)
         }
-        Firestore.firestore().collection("\(shopType)").document("\(cartype)").setData(["Shops" : newData])
+        Firestore.firestore().collection("test").document("\(cartype)").setData(["Shops" : newData])
         
         
     }

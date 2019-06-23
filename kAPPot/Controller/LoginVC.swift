@@ -27,13 +27,20 @@ class LoginVC: UIViewController {
         
         
     }
-    
+    func showAlert(message : String , title : String) {
+        let alertController = UIAlertController(title: title , message:"\(message)", preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        
+        alertController.addAction(defaultAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
     
     @IBAction func buLogin(_ sender: Any) {
 
         Auth.auth().signIn(withEmail: txtEmail.text!, password: txtPassword.text!){
             (user,error) in
             if let error = error{
+                self.showAlert(message: "Email or password is incorrect ", title: "Failed")
                
                 print(error)
             }else{

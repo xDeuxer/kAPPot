@@ -25,6 +25,7 @@ class ShopUpdate_DeletionVC: UIViewController {
         
     }
     override func viewDidAppear(_ animated: Bool) {
+        print(shopType)
         shopsCollectionsView.reloadData()
     }
     
@@ -71,19 +72,31 @@ extension ShopUpdate_DeletionVC : ShopCellDelegate
         
         selectedShop = shop
         cellSelected = cellindex
+        
         self.performSegue(withIdentifier: "Update", sender: self )
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! ShopAdditionVC
-        vc.updateShop(shop: selectedShop, cellindex: cellSelected, shopType: shopType)
+        vc.shopToUpdate = selectedShop
+        vc.shopType = shopType
+        vc.action = "Update"
+        vc.Cell = cellSelected
+        vc.retrievedShops = retrievedShops
+        
         
     }
     
     func DeleteShop(cellindex: Int) {
-        
-        User.loggedInUser.deleteShopFromCar(cartype: selectedCar,shops: retrievedShops ,index: cellindex, shopType: shopType)
+        if(shopType == "Repair")
+        {
+             User.loggedInUser.deleteShopFromCar(cartype: selectedCar,shops: retrievedShops ,index: cellindex, shopType: "car_workshops")
+        }else{
+            User.loggedInUser.deleteShopFromCar(cartype: selectedCar,shops: retrievedShops ,index: cellindex, shopType: "car_stores")
+
+        }
+       
         retrievedShops.remove(at: cellindex)
         shopsCollectionsView.reloadData()
     }

@@ -126,6 +126,8 @@ class AdminControlPanelVC: UIViewController {
             {
                 shopReference = RepairShop(faliureTypes: ["Electrical" , "Mechanical" , "Tires"])
                 
+            }else{
+                shopReference = Shop()
             }
             self.loadDataforView {
                 DispatchQueue.main.async {
@@ -144,6 +146,7 @@ class AdminControlPanelVC: UIViewController {
         if(segue.identifier == "Add")
         {
             let vc = segue.destination as! ShopAdditionVC
+            vc.action = ""
             selectedCars.forEach { (car) in
                 if (car != "")
                 {
@@ -155,13 +158,8 @@ class AdminControlPanelVC: UIViewController {
             let vc = segue.destination as! ShopUpdate_DeletionVC
             vc.retrievedShops = self.retrievedShops
             vc.selectedCar = currentSelectedCar
-            if(shopTypesHandle.currentTitle == "Repair")
-            {
-                shopType = "car_workshops"
-            }else{
-                shopType = "car_stores"
-            }
-            vc.shopType = shopType
+            
+            vc.shopType = shopTypesHandle.currentTitle!
         }
     }
     

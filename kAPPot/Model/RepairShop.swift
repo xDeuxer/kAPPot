@@ -41,7 +41,7 @@ class RepairShop: Shop ,Equatable{
     
     override func getAllCarShops(carType : String,completion: @escaping (Result<[Shop], Error>) -> ()) {
         var temp : [RepairShop] = []
-        let basicQuery = Firestore.firestore().collection("car_workshops")
+        let basicQuery = Firestore.firestore().collection("test")
         basicQuery.addSnapshotListener { (snapshot, error) in
             if let error = error {
                 completion(.failure(error))
